@@ -8,4 +8,5 @@ addons:
     channel: latest/beta
 script:
   - sudo snap alias dotnet-sdk.dotnet dotnet
-  - dotnet --version
+  - dotnet build -c Release
+  - dotnet test
