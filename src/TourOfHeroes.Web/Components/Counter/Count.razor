@@ -1,0 +1,23 @@
+@using BlazorState;
+@using TourOfHeroes.Web.Components.Counter.State
+
+<h1>Counter Component works!</h1>
+
+@inherits BlazorStateComponent
+
+<h1>Counter</h1>
+
+<p>Current count: @currentCount</p>
+
+<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+
+@code {
+    CounterState CounterState => GetState<CounterState>();
+
+    int currentCount => CounterState.Count;
+
+    void IncrementCount()
+    {
+        Mediator.Send(new IncrementAction());
+    }
+}

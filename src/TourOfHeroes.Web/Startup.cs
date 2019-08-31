@@ -1,8 +1,11 @@
+using System.Reflection;
+using BlazorState;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using TourOfHeroes.Web.Components.Counter.State;
 
 namespace TourOfHeroes.Web
 {
@@ -21,6 +24,14 @@ namespace TourOfHeroes.Web
         {
             services.AddRazorPages();
             services.AddServerSideBlazor();
+
+            services.AddBlazorState((options) => 
+                options.Assemblies = new Assembly[] 
+                {
+                    typeof(Startup).GetTypeInfo().Assembly
+                });
+
+            services.AddScoped<CounterState>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
