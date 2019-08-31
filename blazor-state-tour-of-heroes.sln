@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26124.0
 MinimumVisualStudioVersion = 15.0.26124.0
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TourOfHeroes.Web", "TourOfHeroes.Web\TourOfHeroes.Web.csproj", "{73F59ADF-DB89-478C-AF2A-D9D4679B20D4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "src\TourOfHeroes.Web", "src\TourOfHeroes.Web\TourOfHeroes.Web.csproj", "{73F59ADF-DB89-478C-AF2A-D9D4679B20D4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TourOfHeroes.Web.Tests", "TourOfHeroes.Web.Tests\TourOfHeroes.Web.Tests.csproj", "{6D845A18-ECAE-4909-B42F-129A1B041CDE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tests\TourOfHeroes.Web.Tests", "tests\TourOfHeroes.Web.Tests\TourOfHeroes.Web.Tests.csproj", "{6D845A18-ECAE-4909-B42F-129A1B041CDE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
