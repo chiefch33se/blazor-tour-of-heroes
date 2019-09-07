@@ -1,0 +1,24 @@
+@using BlazorState;
+@using TourOfHeroes.Web.Components.Heroes.State;
+
+@inherits BlazorStateComponent
+
+<h2>My Heroes</h2>
+
+<EditForm Model="@hero" OnValidSubmit="@HandleValidSubmit">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <InputText id="name" @bind-Value="@hero.Name" />
+
+    <button type="submit">Submit</button>
+</EditForm>
+
+@code {
+    public Hero hero = new Hero();
+
+    private void HandleValidSubmit()
+    {
+        Console.WriteLine("OnValidSubmit");
+    }
+}
