@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Blazor-State" Version="1.0.0-3.0.100-preview8-013656-112" />
+    <PackageReference Include="Blazor-State" Version="1.0.0-3.0.100-preview9-014004-100" />
   </ItemGroup>
 
 </Project>
