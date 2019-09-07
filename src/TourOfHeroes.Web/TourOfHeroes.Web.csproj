@@ -9,4 +9,8 @@
     <PackageReference Include="Blazor-State" Version="1.0.0-3.0.100-preview9-014004-100" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\TourOfHeroes.Data\TourOfHeroes.Data.csproj" />
+  </ItemGroup>
+
 </Project>
