@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\TourOfHeroes.Web\TourOfHeroes.Web.csproj" />
+    <ProjectReference Include="..\..\src\TourOfHeroes.Web\TourOfHeroes.Web.csproj" />
   </ItemGroup>
 
 </Project>
