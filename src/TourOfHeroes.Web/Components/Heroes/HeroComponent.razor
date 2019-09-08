@@ -1,6 +1,7 @@
 @using BlazorState;
 @using TourOfHeroes.Data
 @using TourOfHeroes.Web.Components.Heroes.State
+@using TourOfHeroes.Web.Components.Heroes.Validation
 
 @inherits BlazorStateComponent
 
@@ -8,7 +9,7 @@
 
 <form class="form-inline">
     <EditForm Model="@hero" OnValidSubmit="@HandleValidSubmit">
-        <FluentValidator />
+        <FluentValidator TValidator="HeroValidation" />
         <ValidationSummary />
 
         <InputText id="name" @bind-Value="@hero.Name" class="form-control" type="text" />
