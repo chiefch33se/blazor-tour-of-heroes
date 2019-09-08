@@ -1,24 +1,47 @@
 @using BlazorState;
 @using TourOfHeroes.Data
+@using TourOfHeroes.Web.Components.Heroes.State
 
 @inherits BlazorStateComponent
 
-<h2>My Heroes</h2>
+<h3>My Heroes</h3>
 
-<EditForm Model="@hero" OnValidSubmit="@HandleValidSubmit">
-    <FluentValidator />
-    <ValidationSummary />
+<form class="form-inline">
+    <EditForm Model="@hero" OnValidSubmit="@HandleValidSubmit">
+        <FluentValidator />
+        <ValidationSummary />
 
-    <InputText id="name" @bind-Value="@hero.Name" />
+        <InputText id="name" @bind-Value="@hero.Name" class="form-control" type="text" />
 
-    <button type="submit">Submit</button>
-</EditForm>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </EditForm>
+</form>
+
+<hr />
+
+<div class="card" style="width: 18rem;">
+  <ul class="list-group list-group-flush">
+    @foreach (var hero in heroState.Heroes)
+    {
+        <li class="list-group-item">
+            @hero.Name
+        </li>
+    }
+  </ul>
+</div>
 
 @code {
-    public Hero hero = new Hero();
+    HeroState heroState => GetState<HeroState>();
+    Hero hero = new Hero();
 
-    private void HandleValidSubmit()
+    protected void HandleValidSubmit()
     {
-        Console.WriteLine("OnValidSubmit");
+        Mediator.Send(new AddAction(hero.Name));
+        hero.Name = string.Empty;
+    }
+
+    protected override void OnInitialized()
+    {
+        Mediator.Send(new LoadAction());
     }
 }
