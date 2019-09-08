@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Components.Forms;
 namespace TourOfHeroes.Web.Validation
 {
     /// <summary>
-    /// Extension methods for <see cref="EditContext" />.
+    /// Extension methods for <see cref="EditContext"/>.
     /// </summary>
     /// <remarks>
     /// See https://chrissainty.com/using-fluentvalidation-for-forms-validation-in-razor-components/

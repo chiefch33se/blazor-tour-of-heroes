@@ -10,7 +10,7 @@ namespace TourOfHeroes.Web.Validation
     public class FluentValidator : ComponentBase
     {
         /// <summary>
-        /// Gets or sets the forms <see cref="EditContext" />.
+        /// Gets or sets the forms <see cref="EditContext"/>.
         /// </summary>
         [CascadingParameter]
         public EditContext EditContext { get; set; }
