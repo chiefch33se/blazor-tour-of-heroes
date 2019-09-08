@@ -5,7 +5,6 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using TourOfHeroes.Web.Components.Counter.State;
 using TourOfHeroes.Web.Components.Heroes.State;
 
 namespace TourOfHeroes.Web
@@ -32,7 +31,6 @@ namespace TourOfHeroes.Web
                     typeof(Startup).GetTypeInfo().Assembly
                 });
 
-            services.AddScoped<CounterState>();
             services.AddScoped<HeroState>();
         }
 
