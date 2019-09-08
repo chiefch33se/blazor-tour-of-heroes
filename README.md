@@ -6,7 +6,7 @@ The Angular Tour of Heroes tutorial, but done using [Blazor](https://dotnet.micr
 
 A few things to note:
 
-I've used a Redux style-state management called [Blazor-State](https://github.com/TimeWarpEngineering/blazor-state).
+I've used a Redux-style state management called [Blazor-State](https://github.com/TimeWarpEngineering/blazor-state).
 
 I've gone with [Fluent Validation](https://github.com/JeremySkinner/FluentValidation) over Data Annotations.
 
