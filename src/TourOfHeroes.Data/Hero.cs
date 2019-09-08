@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace TourOfHeroes.Data
+﻿namespace TourOfHeroes.Data
 {
     public class Hero
     {
