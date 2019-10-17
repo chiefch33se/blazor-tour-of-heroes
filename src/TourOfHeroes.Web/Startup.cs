@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using TourOfHeroes.Web.Components.Heroes.State;
+using TourOfHeroes.Components.Heroes.State;
 
 namespace TourOfHeroes.Web
 {
@@ -31,7 +31,7 @@ namespace TourOfHeroes.Web
                     typeof(Startup).GetTypeInfo().Assembly
                 });
 
-            services.AddScoped<HeroState>();
+            services.AddTransient<HeroState>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

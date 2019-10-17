@@ -6,12 +6,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Blazor-State" Version="1.0.0-3.0.100-preview9-014004-100" />
-    <PackageReference Include="FluentValidation" Version="8.4.0" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\TourOfHeroes.Data\TourOfHeroes.Data.csproj" />
     <ProjectReference Include="..\TourOfHeroes.Components\TourOfHeroes.Components.csproj" />
   </ItemGroup>
 
