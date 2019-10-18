@@ -99,15 +99,28 @@ app {
 }
 
 .valid.modified:not([type=checkbox]) {
-    outline: 1px solid #26b050;
+    border-color: 1px solid #26b050;
 }
 
 .invalid {
-    outline: 1px solid red;
+    border-color: #dc3545;
 }
 
 .validation-message {
-    color: red;
+    color: #dc3545;
+}
+
+.validation-errors li {
+    list-style-type: none;
+}
+
+.hero-add-form {
+    margin-bottom: .75rem;
+}
+
+.validation-errors {
+    margin-bottom: .5rem;
+    padding-left: 1rem;
 }
 
 @media (max-width: 767.98px) {
