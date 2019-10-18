@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using MyBlazorApp.Client.Features.Base;
 using TourOfHeroes.Components.Heroes.State;
 
 namespace TourOfHeroes.Web
@@ -28,10 +29,10 @@ namespace TourOfHeroes.Web
             services.AddBlazorState((options) => 
                 options.Assemblies = new Assembly[] 
                 {
-                    typeof(Startup).GetTypeInfo().Assembly
+                    typeof(BaseHandler<IAction>).GetTypeInfo().Assembly
                 });
 
-            services.AddTransient<HeroState>();
+            services.AddScoped<HeroState>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
