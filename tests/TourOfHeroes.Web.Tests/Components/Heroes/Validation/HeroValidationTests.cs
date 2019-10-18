@@ -1,6 +1,6 @@
 using System.Linq;
 using TourOfHeroes.Data;
-using TourOfHeroes.Web.Components.Heroes.Validation;
+using TourOfHeroes.Components.Heroes.Validation;
 using Xunit;
 
 namespace TourOfHeroes.Web.Tests.Components.Heroes.Validation

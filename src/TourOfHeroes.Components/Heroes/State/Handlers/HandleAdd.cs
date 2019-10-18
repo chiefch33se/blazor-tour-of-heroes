@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 using BlazorState;
@@ -6,17 +5,17 @@ using MediatR;
 using MyBlazorApp.Client.Features.Base;
 using TourOfHeroes.Data;
 
-namespace TourOfHeroes.Components.Heroes.State
+namespace TourOfHeroes.Components.Heroes.State.Handlers
 {
     public partial class HeroState
     {
-        public class HandleAdd : BaseHandler<AddAction>
+        public class HandleAdd : BaseHandler<Actions.HeroState.Add>
         {
             public HandleAdd(IStore aStore) : base(aStore)
             {
             }
 
-            public override Task<Unit> Handle(AddAction aAction, CancellationToken aCancellationToken)
+            public override Task<Unit> Handle(Actions.HeroState.Add aAction, CancellationToken aCancellationToken)
             {
                 // TODO: Make service call.
                 var heroToAppend = new Hero

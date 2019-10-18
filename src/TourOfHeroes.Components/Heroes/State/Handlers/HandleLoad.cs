@@ -6,17 +6,17 @@ using MediatR;
 using MyBlazorApp.Client.Features.Base;
 using TourOfHeroes.Data;
 
-namespace TourOfHeroes.Components.Heroes.State
+namespace TourOfHeroes.Components.Heroes.State.Handlers
 {
     public partial class HeroState
     {
-        public class HandleLoad : BaseHandler<LoadAction>
+        public class HandleLoad : BaseHandler<Actions.HeroState.Load>
         {
             public HandleLoad(IStore aStore) : base(aStore)
             {
             }
 
-            public override Task<Unit> Handle(LoadAction aAction, CancellationToken aCancellationToken)
+            public override Task<Unit> Handle(Actions.HeroState.Load aAction, CancellationToken aCancellationToken)
             {
                 // TODO: Make service call.
                 var heroes = new List<Hero>

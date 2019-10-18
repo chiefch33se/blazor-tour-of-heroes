@@ -37,12 +37,12 @@
 
     protected void HandleValidSubmit()
     {
-        Mediator.Send(new AddAction(hero.Name));
+        Mediator.Send(new State.Actions.HeroState.Add(hero.Name));
         hero.Name = string.Empty;
     }
 
     protected override void OnInitialized()
     {
-        Mediator.Send(new LoadAction());
+        Mediator.Send(new State.Actions.HeroState.Load());
     }
 }
