@@ -26,6 +26,9 @@ namespace TourOfHeroes.Web
             services.AddRazorPages();
             services.AddServerSideBlazor();
 
+            // If you're getting Error: Handler was not found for request of type MediatR.IRequestHandler`2[YourAction,MediatR.Unit]. Register your handlers with the container.
+            // Then you need to add the assemblies where the handlers live. Blazor State will then scan for Handlers in that assembly.
+            // You essentially could add any class in here providing it lives in the same assembly... I'm using the base handler as that makes most sense.
             services.AddBlazorState((options) => 
                 options.Assemblies = new Assembly[] 
                 {
