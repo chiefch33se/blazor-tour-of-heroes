@@ -1,3 +1,4 @@
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using BlazorState;
@@ -16,9 +17,16 @@ namespace TourOfHeroes.Components.Heroes.State.Handlers
             public override Task<Unit> Handle(Actions.HeroState.Add aAction, CancellationToken aCancellationToken)
             {
                 // TODO: Make service call.
+                var id = 1;
+
+                if (_heroState.Heroes.Any())
+                {
+                    id = _heroState.Heroes.Max(hero => hero.Id + 1);
+                }
+
                 var heroToAppend = new Hero
                 {
-                    Id = 1,
+                    Id = id,
                     Name = aAction.Name
                 };
 
