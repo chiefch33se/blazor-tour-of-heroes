@@ -11,6 +11,6 @@ namespace MyBlazorApp.Client.Features.Base
     {
         protected HeroState _heroState => Store.GetState<HeroState>();
 
-        public BaseHandler(IStore aStore) : base(aStore) { }
+        public BaseHandler(IStore store) : base(store) { }
     }
 }
