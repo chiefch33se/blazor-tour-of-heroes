@@ -11,9 +11,7 @@ namespace TourOfHeroes.Components.Heroes.State.Handlers
     {
         public class HandleAdd : BaseHandler<Actions.HeroState.Add>
         {
-            public HandleAdd(IStore aStore) : base(aStore)
-            {
-            }
+            public HandleAdd(IStore store) : base(store) { }
 
             public override Task<Unit> Handle(Actions.HeroState.Add aAction, CancellationToken aCancellationToken)
             {

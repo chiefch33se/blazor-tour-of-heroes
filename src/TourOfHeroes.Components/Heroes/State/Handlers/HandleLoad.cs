@@ -12,9 +12,7 @@ namespace TourOfHeroes.Components.Heroes.State.Handlers
     {
         public class HandleLoad : BaseHandler<Actions.HeroState.Load>
         {
-            public HandleLoad(IStore aStore) : base(aStore)
-            {
-            }
+            public HandleLoad(IStore store) : base(store) { }
 
             public override Task<Unit> Handle(Actions.HeroState.Load aAction, CancellationToken aCancellationToken)
             {
