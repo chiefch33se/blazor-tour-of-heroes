@@ -1,5 +1,5 @@
 using BlazorState;
-using TourOfHeroes.Components.Heroes.State;
+using TourOfHeroes.Components.Heroes.Feature;
 
 namespace MyBlazorApp.Client.Features.Base
 {

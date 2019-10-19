@@ -1,15 +1,15 @@
 using BlazorState;
 using TourOfHeroes.Data;
 
-namespace TourOfHeroes.Components.Heroes.State.Actions
+namespace TourOfHeroes.Components.Heroes.Feature.Delete
 {
     public partial class HeroState 
     {
-        public class Delete: IAction
+        public class DeleteAction: IAction
         {
             public Hero Hero;
 
-            public Delete(Hero hero)
+            public DeleteAction(Hero hero)
             {
                 Hero = hero;
             }

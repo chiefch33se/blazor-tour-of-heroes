@@ -1,9 +1,6 @@
-@using BlazorState;
-@using TourOfHeroes.Data
-@using TourOfHeroes.Components.Heroes.State
 @using TourOfHeroes.Components.Heroes.Validation
 
-@inherits BlazorStateComponent
+@inherits HeroesComponentBase
 
 <div class="container">
     <div class="jumbotron jumbotron-fluid">
@@ -14,10 +11,10 @@
 
     <div class="card hero-add-form">
         <div class="card-body">
-            <EditForm class="form-inline" Model="@hero" OnValidSubmit="@Add">
+            <EditForm class="form-inline" Model="@_hero" OnValidSubmit="@Add">
                 <div class="form-group mx-sm-3 mb-2">     
                     <FluentValidator TValidator="HeroValidation" />
-                    <InputText id="name" @bind-Value="@hero.Name" class="form-control" type="text" placeholder="Hero name" />
+                    <InputText id="name" @bind-Value="@_hero.Name" class="form-control" type="text" placeholder="Hero name" />
                 </div>
                 <button type="submit" class="btn btn-primary mb-2">Add</button>
                 <div >
@@ -28,7 +25,7 @@
     </div>
 
     <div class="card-columns">
-        @foreach (var hero in heroState.Heroes)
+        @foreach (var hero in _heroState.Heroes)
         {
             <div class="card">
                 <div class="card-body">
@@ -43,7 +40,7 @@
         }
     </div>
 
-    @if (heroState.Heroes.Any() == false)
+    @if (_heroState.Heroes.Any() == false)
     {
         <div class="alert alert-info" role="alert">
             <strong>Oh no!</strong> It looks like you don't have any heroes 😕
@@ -51,27 +48,3 @@
     }
 
 </div>
-
-@code {
-    HeroState heroState => GetState<HeroState>();
-    Hero hero = new Hero();
-
-    protected void Add()
-    {
-        Mediator.Send(new State.Actions.HeroState.Add(hero.Name));
-        hero.Name = string.Empty;
-    }
-
-    protected void Delete(Hero hero)
-    {
-        Mediator.Send(new State.Actions.HeroState.Delete(hero));
-    }
-
-    protected override void OnInitialized()
-    {
-        if (heroState.Heroes.Any() == false)
-        {
-            Mediator.Send(new State.Actions.HeroState.Load());
-        }
-    }
-}

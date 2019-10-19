@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using BlazorState;
 using TourOfHeroes.Data;
 
-namespace TourOfHeroes.Components.Heroes.State
+namespace TourOfHeroes.Components.Heroes.Feature
 {
     public partial class HeroState : State<HeroState>
     {

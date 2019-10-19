@@ -6,7 +6,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using MyBlazorApp.Client.Features.Base;
-using TourOfHeroes.Components.Heroes.State;
+using TourOfHeroes.Components.Heroes.Feature;
 
 namespace TourOfHeroes.Web
 {
