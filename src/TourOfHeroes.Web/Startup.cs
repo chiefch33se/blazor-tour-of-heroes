@@ -1,11 +1,13 @@
 using System.Reflection;
 using BlazorState;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using MyBlazorApp.Client.Features.Base;
+using TourOfHeroes.Components.HeroDetail.Feature;
 using TourOfHeroes.Components.Heroes.Feature;
 
 namespace TourOfHeroes.Web
@@ -35,7 +37,8 @@ namespace TourOfHeroes.Web
                     typeof(BaseHandler<IAction>).GetTypeInfo().Assembly
                 });
 
-            services.AddScoped<HeroState>();
+            services.AddScoped<HeroesState>();
+            services.AddScoped<HeroDetailState>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

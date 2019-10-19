@@ -4,9 +4,9 @@ using TourOfHeroes.Data;
 
 namespace TourOfHeroes.Components.Heroes.Feature
 {
-    public partial class HeroState : State<HeroState>
+    public partial class HeroesState : State<HeroesState>
     {
-        public List<Hero> Heroes { get; private set; }
+        public List<Hero> Heroes { get; set; }
 
         public override void Initialize() => Heroes = new List<Hero>();
     }

@@ -2,7 +2,7 @@ using BlazorState;
 
 namespace TourOfHeroes.Components.Heroes.Feature.Add
 {
-    public partial class HeroState 
+    public partial class HeroesState 
     {
         public class AddAction: IAction
         {

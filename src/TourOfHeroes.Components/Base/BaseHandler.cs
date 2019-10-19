@@ -1,5 +1,6 @@
 using BlazorState;
 using TourOfHeroes.Components.Heroes.Feature;
+using TourOfHeroes.Components.HeroDetail.Feature;
 
 namespace MyBlazorApp.Client.Features.Base
 {
@@ -9,7 +10,9 @@ namespace MyBlazorApp.Client.Features.Base
     public abstract class BaseHandler<TAction> : ActionHandler<TAction>
         where TAction : IAction
     {
-        protected HeroState _heroState => Store.GetState<HeroState>();
+        protected HeroesState _heroesState => Store.GetState<HeroesState>();
+
+        protected HeroDetailState _heroDetailState => Store.GetState<HeroDetailState>();
 
         public BaseHandler(IStore store) : base(store) { }
     }

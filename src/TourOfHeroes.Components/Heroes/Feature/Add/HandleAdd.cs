@@ -8,20 +8,20 @@ using TourOfHeroes.Data;
 
 namespace TourOfHeroes.Components.Heroes.Feature.Add
 {
-    public partial class HeroState
+    public partial class HeroesState
     {
-        public class HandleAdd : BaseHandler<HeroState.AddAction>
+        public class HandleAdd : BaseHandler<HeroesState.AddAction>
         {
             public HandleAdd(IStore store) : base(store) { }
 
-            public override Task<Unit> Handle(HeroState.AddAction aAction, CancellationToken aCancellationToken)
+            public override Task<Unit> Handle(HeroesState.AddAction aAction, CancellationToken aCancellationToken)
             {
                 // TODO: Make service call.
                 var id = 1;
 
-                if (_heroState.Heroes.Any())
+                if (_heroesState.Heroes.Any())
                 {
-                    id = _heroState.Heroes.Max(hero => hero.Id + 1);
+                    id = _heroesState.Heroes.Max(hero => hero.Id + 1);
                 }
 
                 var heroToAppend = new Hero
@@ -30,7 +30,7 @@ namespace TourOfHeroes.Components.Heroes.Feature.Add
                     Name = aAction.Name
                 };
 
-                _heroState.Heroes.Add(heroToAppend);
+                _heroesState.Heroes.Add(heroToAppend);
 
                 return Unit.Task;
             }

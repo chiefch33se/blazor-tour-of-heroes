@@ -6,16 +6,16 @@ using MyBlazorApp.Client.Features.Base;
 
 namespace TourOfHeroes.Components.Heroes.Feature.Delete
 {
-    public partial class HeroState
+    public partial class HeroesState
     {
-        public class HandleDelete : BaseHandler<HeroState.DeleteAction>
+        public class HandleDelete : BaseHandler<HeroesState.DeleteAction>
         {
             public HandleDelete(IStore store) : base(store) { }
 
-            public override Task<Unit> Handle(HeroState.DeleteAction aAction, CancellationToken aCancellationToken)
+            public override Task<Unit> Handle(HeroesState.DeleteAction aAction, CancellationToken aCancellationToken)
             {
                 // TODO: Make service call.
-                _heroState.Heroes.Remove(aAction.Hero);
+                _heroesState.Heroes.Remove(aAction.Hero);
 
                 return Unit.Task;
             }

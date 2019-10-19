@@ -3,7 +3,7 @@ using TourOfHeroes.Data;
 
 namespace TourOfHeroes.Components.Heroes.Feature.Delete
 {
-    public partial class HeroState 
+    public partial class HeroesState 
     {
         public class DeleteAction: IAction
         {

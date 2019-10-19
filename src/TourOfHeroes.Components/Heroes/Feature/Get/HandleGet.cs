@@ -8,13 +8,13 @@ using TourOfHeroes.Data;
 
 namespace TourOfHeroes.Components.Heroes.Feature.Get
 {
-    public partial class HeroState
+    public partial class HeroesState
     {
-        public class HandleGet : BaseHandler<HeroState.GetAction>
+        public class HandleGet : BaseHandler<HeroesState.GetAction>
         {
             public HandleGet(IStore store) : base(store) { }
 
-            public override Task<Unit> Handle(HeroState.GetAction aAction, CancellationToken aCancellationToken)
+            public override Task<Unit> Handle(HeroesState.GetAction aAction, CancellationToken aCancellationToken)
             {
                 // TODO: Make service call.
                 var heroes = new List<Hero>
@@ -31,7 +31,7 @@ namespace TourOfHeroes.Components.Heroes.Feature.Get
                     new Hero{ Id = 20, Name = "Tornado" },
                 };
 
-                _heroState.Heroes.AddRange(heroes);
+                _heroesState.Heroes.AddRange(heroes);
 
                 return Unit.Task;
             }
