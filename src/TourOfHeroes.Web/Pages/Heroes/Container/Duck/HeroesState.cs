@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using BlazorState;
 using TourOfHeroes.Data;
 
-namespace TourOfHeroes.Components.Heroes.Feature
+namespace TourOfHeroes.Web.Pages.Heroes.Container.Duck
 {
     public partial class HeroesState : State<HeroesState>
     {

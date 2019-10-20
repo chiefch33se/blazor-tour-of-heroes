@@ -1,9 +1,0 @@
-@page "/heroes/{HeroId:int}"
-@using Microsoft.AspNetCore.Components;
-
-<HeroDetailsComponent HeroId=HeroId />
-
-@code {
-    [Parameter]
-    public int HeroId {get; set;}
-}

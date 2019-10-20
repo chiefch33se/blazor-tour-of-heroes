@@ -1,12 +1,13 @@
+
 using System.Linq;
 using BlazorState;
 using Microsoft.AspNetCore.Components;
-using TourOfHeroes.Components.Heroes.Feature;
 using TourOfHeroes.Data;
+using TourOfHeroes.Web.Pages.Heroes.Container.Duck;
 
-namespace TourOfHeroes.Components.Heroes
+namespace TourOfHeroes.Web.Pages.Heroes.Container
 {
-    public class HeroesComponentBase : BlazorStateComponent
+    public class HeroesBase : BlazorStateComponent
     {
         protected HeroesState _heroesState => GetState<HeroesState>();
         protected Hero _hero = new Hero();
@@ -16,13 +17,13 @@ namespace TourOfHeroes.Components.Heroes
 
         protected void Add()
         {
-            Mediator.Send(new Feature.Add.HeroesState.AddAction(_hero.Name));
+            Mediator.Send(new HeroesState.CreateAction(_hero.Name));
             _hero.Name = string.Empty;
         }
 
-        protected void Delete(Hero hero)
+        protected void Delete(int id)
         {
-            Mediator.Send(new Feature.Delete.HeroesState.DeleteAction(hero));
+            Mediator.Send(new HeroesState.DestroyAction(id));
         }
 
         protected void Edit(int id)
@@ -34,7 +35,7 @@ namespace TourOfHeroes.Components.Heroes
         {
             if (_heroesState.Heroes.Any() == false)
             {
-                Mediator.Send(new Feature.Get.HeroesState.GetAction());
+                Mediator.Send(new HeroesState.RetrieveManyAction());
             }
         }
     }

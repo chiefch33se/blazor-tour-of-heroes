@@ -1,6 +1,6 @@
-@using TourOfHeroes.Components.Heroes.Validation
-
-@inherits HeroesComponentBase
+@page "/heroes"
+@using TourOfHeroes.Web.Pages.Heroes.Validation
+@inherits HeroesBase
 
 <div class="container">
     <div class="jumbotron jumbotron-fluid">
@@ -33,7 +33,7 @@
                     <p class="card-text">ID: @hero.Id</p>
                 </div>
                 <div class="card-footer text-right">
-                    <button class="btn btn-sm btn-link" @onclick="@(() => Delete(hero))">Delete</button>
+                    <button class="btn btn-sm btn-link" @onclick="@(() => Delete(hero.Id))">Delete</button>
                     <button type="button" class="btn btn-sm btn-dark" @onclick="@(() => Edit(hero.Id))">Edit</button>
                 </div>
             </div>

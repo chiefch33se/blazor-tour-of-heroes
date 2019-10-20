@@ -3,18 +3,18 @@ using System.Threading;
 using System.Threading.Tasks;
 using BlazorState;
 using MediatR;
-using MyBlazorApp.Client.Features.Base;
+using TourOfHeroes.Web.Shared;
 using TourOfHeroes.Data;
 
-namespace TourOfHeroes.Components.Heroes.Feature.Add
+namespace TourOfHeroes.Web.Pages.Heroes.Container.Duck
 {
     public partial class HeroesState
     {
-        public class HandleAdd : BaseHandler<HeroesState.AddAction>
+        public class HandleCreate : BaseHandler<HeroesState.CreateAction>
         {
-            public HandleAdd(IStore store) : base(store) { }
+            public HandleCreate(IStore store) : base(store) { }
 
-            public override Task<Unit> Handle(HeroesState.AddAction aAction, CancellationToken aCancellationToken)
+            public override Task<Unit> Handle(HeroesState.CreateAction aAction, CancellationToken aCancellationToken)
             {
                 // TODO: Make service call.
                 var id = 1;

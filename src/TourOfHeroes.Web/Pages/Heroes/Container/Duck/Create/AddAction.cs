@@ -1,14 +1,14 @@
 using BlazorState;
 
-namespace TourOfHeroes.Components.Heroes.Feature.Add
+namespace TourOfHeroes.Web.Pages.Heroes.Container.Duck
 {
     public partial class HeroesState 
     {
-        public class AddAction: IAction
+        public class CreateAction: IAction
         {
             public string Name;
 
-            public AddAction(string name)
+            public CreateAction(string name)
             {
                 Name = name;
             }
