@@ -1,9 +1,9 @@
 using System.Linq;
 using TourOfHeroes.Data;
-using TourOfHeroes.Components.Heroes.Validation;
+using TourOfHeroes.Web.Pages.Heroes.Validation;
 using Xunit;
 
-namespace TourOfHeroes.Web.Tests.Components.Heroes.Validation
+namespace TourOfHeroes.Web.Tests.Pages.Heroes.Validation
 {
     public class HeroValidationTests
     {
