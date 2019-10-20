@@ -1,9 +1,9 @@
 using BlazorState;
 using Microsoft.AspNetCore.Components;
 using TourOfHeroes.Data;
-using TourOfHeroes.Web.Pages.Heroes.Container.Duck;
+using TourOfHeroes.Web.Pages.Heroes.Containers.Duck;
 
-namespace TourOfHeroes.Web.Pages.Heroes.Container
+namespace TourOfHeroes.Web.Pages.Heroes.Containers
 {
     public class HeroDetailsBase : BlazorStateComponent
     {

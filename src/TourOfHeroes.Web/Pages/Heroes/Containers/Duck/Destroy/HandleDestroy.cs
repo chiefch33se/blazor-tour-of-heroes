@@ -5,7 +5,7 @@ using BlazorState;
 using MediatR;
 using TourOfHeroes.Web.Shared;
 
-namespace TourOfHeroes.Web.Pages.Heroes.Container.Duck
+namespace TourOfHeroes.Web.Pages.Heroes.Containers.Duck
 {
     public partial class HeroesState
     {
