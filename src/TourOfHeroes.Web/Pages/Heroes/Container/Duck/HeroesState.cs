@@ -8,6 +8,12 @@ namespace TourOfHeroes.Web.Pages.Heroes.Container.Duck
     {
         public List<Hero> Heroes { get; set; }
 
-        public override void Initialize() => Heroes = new List<Hero>();
+        public Hero Hero { get; set; }
+
+        public override void Initialize()
+        {
+            Heroes = new List<Hero>();
+            Hero = new Hero();
+        }
     }
 }

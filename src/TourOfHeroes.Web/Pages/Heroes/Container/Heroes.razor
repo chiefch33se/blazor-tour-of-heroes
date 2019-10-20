@@ -11,7 +11,7 @@
 
     <div class="card hero-add-form">
         <div class="card-body">
-            <EditForm class="form-inline" Model="@_hero" OnValidSubmit="@Add">
+            <EditForm class="form-inline" Model="@_hero" OnValidSubmit="@Create">
                 <div class="form-group mx-sm-3 mb-2">     
                     <FluentValidator TValidator="HeroValidation" />
                     <InputText id="name" @bind-Value="@_hero.Name" class="form-control" type="text" placeholder="Hero name" />
@@ -34,7 +34,7 @@
                 </div>
                 <div class="card-footer text-right">
                     <button class="btn btn-sm btn-link" @onclick="@(() => Delete(hero.Id))">Delete</button>
-                    <button type="button" class="btn btn-sm btn-dark" @onclick="@(() => Edit(hero.Id))">Edit</button>
+                    <button type="button" class="btn btn-sm btn-dark" @onclick="@(() => Modify(hero.Id))">Edit</button>
                 </div>
             </div>
         }

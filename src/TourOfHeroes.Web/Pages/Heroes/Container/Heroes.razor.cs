@@ -15,7 +15,7 @@ namespace TourOfHeroes.Web.Pages.Heroes.Container
         [Inject]
         public NavigationManager NavigationManager { get; set; }
 
-        protected void Add()
+        protected void Create()
         {
             Mediator.Send(new HeroesState.CreateAction(_hero.Name));
             _hero.Name = string.Empty;
@@ -26,7 +26,7 @@ namespace TourOfHeroes.Web.Pages.Heroes.Container
             Mediator.Send(new HeroesState.DestroyAction(id));
         }
 
-        protected void Edit(int id)
+        protected void Modify(int id)
         {
             NavigationManager.NavigateTo($"/heroes/{id}");
         }
