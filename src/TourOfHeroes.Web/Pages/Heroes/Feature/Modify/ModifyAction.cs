@@ -1,5 +1,5 @@
 using BlazorState;
-using TourOfHeroes.Data;
+using TourOfHeroes.Web.Pages.Heroes.Models;
 
 namespace TourOfHeroes.Web.Pages.Heroes.Feature
 {

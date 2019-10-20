@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 using BlazorState;
 using MediatR;
 using TourOfHeroes.Web.Shared;
-using TourOfHeroes.Data;
+using TourOfHeroes.Web.Pages.Heroes.Models;
 
 namespace TourOfHeroes.Web.Pages.Heroes.Feature
 {

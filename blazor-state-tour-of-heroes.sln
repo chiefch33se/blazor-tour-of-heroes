@@ -9,8 +9,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TourOfHeroes.Web.Tests", "t
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{AC727F60-7A1C-442F-9425-3AE52738B97E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TourOfHeroes.Data", "src\TourOfHeroes.Data\TourOfHeroes.Data.csproj", "{7BB302AC-69B6-478F-8B16-893B6E23BF32}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -48,18 +46,6 @@ Global
 		{6D845A18-ECAE-4909-B42F-129A1B041CDE}.Release|x64.Build.0 = Release|Any CPU
 		{6D845A18-ECAE-4909-B42F-129A1B041CDE}.Release|x86.ActiveCfg = Release|Any CPU
 		{6D845A18-ECAE-4909-B42F-129A1B041CDE}.Release|x86.Build.0 = Release|Any CPU
-		{7BB302AC-69B6-478F-8B16-893B6E23BF32}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7BB302AC-69B6-478F-8B16-893B6E23BF32}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7BB302AC-69B6-478F-8B16-893B6E23BF32}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{7BB302AC-69B6-478F-8B16-893B6E23BF32}.Debug|x64.Build.0 = Debug|Any CPU
-		{7BB302AC-69B6-478F-8B16-893B6E23BF32}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{7BB302AC-69B6-478F-8B16-893B6E23BF32}.Debug|x86.Build.0 = Debug|Any CPU
-		{7BB302AC-69B6-478F-8B16-893B6E23BF32}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7BB302AC-69B6-478F-8B16-893B6E23BF32}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7BB302AC-69B6-478F-8B16-893B6E23BF32}.Release|x64.ActiveCfg = Release|Any CPU
-		{7BB302AC-69B6-478F-8B16-893B6E23BF32}.Release|x64.Build.0 = Release|Any CPU
-		{7BB302AC-69B6-478F-8B16-893B6E23BF32}.Release|x86.ActiveCfg = Release|Any CPU
-		{7BB302AC-69B6-478F-8B16-893B6E23BF32}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{7BB302AC-69B6-478F-8B16-893B6E23BF32} = {AC727F60-7A1C-442F-9425-3AE52738B97E}

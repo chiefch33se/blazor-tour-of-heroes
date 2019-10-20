@@ -10,9 +10,4 @@
       <PackageReference Include="FluentValidation" Version="8.4.0" />
   </ItemGroup>
 
-
-  <ItemGroup>
-    <ProjectReference Include="..\TourOfHeroes.Data\TourOfHeroes.Data.csproj" />
-  </ItemGroup>
-
 </Project>

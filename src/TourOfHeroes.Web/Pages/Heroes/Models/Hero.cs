@@ -1,4 +1,4 @@
-﻿namespace TourOfHeroes.Data
+﻿namespace TourOfHeroes.Web.Pages.Heroes.Models
 {
     public class Hero
     {

@@ -1,5 +1,5 @@
 using FluentValidation;
-using TourOfHeroes.Data;
+using TourOfHeroes.Web.Pages.Heroes.Models;
 
 namespace TourOfHeroes.Web.Pages.Heroes.Validation
 {

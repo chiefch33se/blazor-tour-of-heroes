@@ -3,7 +3,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using BlazorState;
 using MediatR;
-using TourOfHeroes.Data;
+using TourOfHeroes.Web.Pages.Heroes.Models;
 using TourOfHeroes.Web.Shared;
 
 namespace TourOfHeroes.Web.Pages.Heroes.Feature
