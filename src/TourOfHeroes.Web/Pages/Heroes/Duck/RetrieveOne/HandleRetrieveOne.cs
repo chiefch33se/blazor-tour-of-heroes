@@ -7,7 +7,7 @@ using MediatR;
 using TourOfHeroes.Data;
 using TourOfHeroes.Web.Shared;
 
-namespace TourOfHeroes.Web.Pages.Heroes.Containers.Duck
+namespace TourOfHeroes.Web.Pages.Heroes.Duck
 {
     public partial class HeroesState
     {

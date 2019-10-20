@@ -1,6 +1,6 @@
 using BlazorState;
 
-namespace TourOfHeroes.Web.Pages.Heroes.Containers.Duck
+namespace TourOfHeroes.Web.Pages.Heroes.Duck
 {
     public partial class HeroesState 
     {

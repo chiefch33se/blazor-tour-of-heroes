@@ -1,5 +1,5 @@
 using BlazorState;
-using TourOfHeroes.Web.Pages.Heroes.Containers.Duck;
+using TourOfHeroes.Web.Pages.Heroes.Duck;
 
 namespace TourOfHeroes.Web.Shared
 {

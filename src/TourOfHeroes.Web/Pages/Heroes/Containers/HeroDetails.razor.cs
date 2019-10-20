@@ -1,7 +1,7 @@
 using BlazorState;
 using Microsoft.AspNetCore.Components;
 using TourOfHeroes.Data;
-using TourOfHeroes.Web.Pages.Heroes.Containers.Duck;
+using TourOfHeroes.Web.Pages.Heroes.Duck;
 
 namespace TourOfHeroes.Web.Pages.Heroes.Containers
 {

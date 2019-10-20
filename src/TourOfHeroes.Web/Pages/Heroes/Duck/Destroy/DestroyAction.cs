@@ -1,14 +1,14 @@
 using BlazorState;
 
-namespace TourOfHeroes.Web.Pages.Heroes.Containers.Duck
+namespace TourOfHeroes.Web.Pages.Heroes.Duck
 {
     public partial class HeroesState 
     {
-        public class RetrieveOneAction : IAction
+        public class DestroyAction: IAction
         {
             public int Id { get; private set; }
 
-            public RetrieveOneAction(int id)
+            public DestroyAction(int id)
             {
                 Id = id;
             }
