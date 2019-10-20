@@ -6,9 +6,9 @@ namespace TourOfHeroes.Web.Pages.Heroes.Container.Duck
 {
     public partial class HeroesState : State<HeroesState>
     {
-        public List<Hero> Heroes { get; set; }
+        public List<Hero> Heroes { get; private set; }
 
-        public Hero Hero { get; set; }
+        public Hero Hero { get; private set; }
 
         public override void Initialize()
         {

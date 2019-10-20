@@ -7,14 +7,17 @@ namespace TourOfHeroes.Web.Pages.Heroes.Container
 {
     public class HeroDetailsBase : BlazorStateComponent
     {
-        [Parameter]
-        public int HeroId { get; set; }
-        public bool _heroNotFound = false;
-        protected Hero _hero = new Hero();
-        protected HeroesState _heroesState => GetState<HeroesState>();
-
         [Inject]
         public NavigationManager NavigationManager { get; set; }
+
+        [Parameter]
+        public int HeroId { get; set; }
+
+        protected bool _heroNotFound = false;
+
+        protected Hero _hero = new Hero();
+
+        protected HeroesState _heroesState => GetState<HeroesState>();
 
         protected void Modify()
         {
@@ -25,12 +28,9 @@ namespace TourOfHeroes.Web.Pages.Heroes.Container
         protected override void OnParametersSet() 
         {
             Mediator.Send(new HeroesState.RetrieveOneAction(HeroId));
+            _heroNotFound = _heroesState.Hero is null;
 
-            if (_heroesState.Hero is null)
-            {
-                _heroNotFound = true;
-            }
-            else
+            if (_heroNotFound == false)
             {
                 _hero.Id = _heroesState.Hero.Id;
             }
@@ -38,7 +38,7 @@ namespace TourOfHeroes.Web.Pages.Heroes.Container
 
         protected void NavigateBack()
         {
-            NavigationManager.NavigateTo($"/heroes");
+            NavigationManager.NavigateTo("/heroes");
         }
     }
 }
