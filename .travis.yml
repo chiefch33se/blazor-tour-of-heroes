@@ -2,5 +2,6 @@ language: csharp
 mono: none
 dotnet: 3.0
 script:
-  - dotnet build -c Release
-  - dotnet test
+  - dotnet restore --no-cache
+  - dotnet build --no-restore -c Release
+  - dotnet test --no-restore
