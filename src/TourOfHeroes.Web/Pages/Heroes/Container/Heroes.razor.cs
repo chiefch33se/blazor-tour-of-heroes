@@ -1,4 +1,3 @@
-
 using System.Linq;
 using BlazorState;
 using Microsoft.AspNetCore.Components;
@@ -9,11 +8,12 @@ namespace TourOfHeroes.Web.Pages.Heroes.Container
 {
     public class HeroesBase : BlazorStateComponent
     {
-        protected HeroesState _heroesState => GetState<HeroesState>();
-        protected Hero _hero = new Hero();
-
         [Inject]
         public NavigationManager NavigationManager { get; set; }
+
+        protected HeroesState _heroesState => GetState<HeroesState>();
+
+        protected Hero _hero = new Hero();
 
         protected void Create()
         {
