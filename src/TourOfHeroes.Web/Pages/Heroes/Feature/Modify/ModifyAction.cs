@@ -1,7 +1,7 @@
 using BlazorState;
 using TourOfHeroes.Data;
 
-namespace TourOfHeroes.Web.Pages.Heroes.Duck
+namespace TourOfHeroes.Web.Pages.Heroes.Feature
 {
     public partial class HeroesState 
     {
