@@ -1,7 +1,7 @@
 using BlazorState;
-using TourOfHeroes.Components.Heroes.State;
+using TourOfHeroes.Web.Pages.Heroes.Container.Duck;
 
-namespace MyBlazorApp.Client.Features.Base
+namespace TourOfHeroes.Web.Shared
 {
     /// <summary>
     /// Base Handler that makes it easy to access state.
@@ -9,7 +9,7 @@ namespace MyBlazorApp.Client.Features.Base
     public abstract class BaseHandler<TAction> : ActionHandler<TAction>
         where TAction : IAction
     {
-        protected HeroState _heroState => Store.GetState<HeroState>();
+        protected HeroesState _heroesState => Store.GetState<HeroesState>();
 
         public BaseHandler(IStore store) : base(store) { }
     }

@@ -3,7 +3,7 @@ using FluentValidation;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Forms;
 
-namespace TourOfHeroes.Components.Validation
+namespace TourOfHeroes.Web.Validation
 {
     /// <summary>
     /// Custom validator component which uses Fluent validation.
