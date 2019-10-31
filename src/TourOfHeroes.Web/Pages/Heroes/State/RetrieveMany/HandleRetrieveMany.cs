@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 using BlazorState;
 using MediatR;
 using TourOfHeroes.Web.Pages.Heroes.Models;
-using TourOfHeroes.Web.Shared;
+using TourOfHeroes.Web.Common;
 
 namespace TourOfHeroes.Web.Pages.Heroes.State
 {
@@ -14,12 +14,12 @@ namespace TourOfHeroes.Web.Pages.Heroes.State
         /// <summary>
         /// Deals with the side effects of dispatching a <see cref="HeroesState.RetrieveManyAction"/> and updates the state accordingly.
         /// </summary>
-        public class HandleRetrieveMany : BaseHandler<HeroesState.RetrieveManyAction>
+        internal class HandleRetrieveMany : BaseHandler<HeroesState.RetrieveManyAction>
         {
             /// <summary>
             /// Initializes a new instance of the <see cref="HandleRetrieveMany"/> class.
             /// </summary>
-            /// <param name="store">The application store to create with.</param>
+            /// <param name="store">The single source of truth to create with.</param>
             public HandleRetrieveMany(IStore store) 
                 : base(store)
             {
@@ -43,7 +43,7 @@ namespace TourOfHeroes.Web.Pages.Heroes.State
                     new Hero{ Id = 20, Name = "Tornado" },
                 };
 
-                _heroesState.Heroes.AddRange(heroes);
+                HeroesState.Heroes.AddRange(heroes);
 
                 return Unit.Task;
             }

@@ -5,41 +5,41 @@ using Xunit;
 
 namespace TourOfHeroes.Web.Tests.Pages.Heroes.Validation
 {
-    public class HeroValidationTests
+    public class HeroValidationCollectionTests
     {
-        private HeroValidation _heroValidation;
+        private HeroValidationCollection _HeroValidationCollection;
 
         /// <summary>
-        /// Ensures a new <see cref="HeroValidation"/> for each test run.
+        /// Ensures a new <see cref="HeroValidationCollection"/> for each test run.
         /// </summary>
-        public HeroValidationTests()
+        public HeroValidationCollectionTests()
         {
-            _heroValidation = new HeroValidation();
+            _HeroValidationCollection = new HeroValidationCollection();
         }
 
         /// <summary>
         /// Happy path.
         /// </summary>
         [Fact]
-        public void HeroValidation_ValidModel_PassesValidation()
+        public void HeroValidationCollection_ValidModel_PassesValidation()
         {
             // Given valid model.
             // When validated.
-            var result = _heroValidation.Validate(ValidHero);
+            var result = _HeroValidationCollection.Validate(ValidHero);
 
             // Then should pass validation.
             Assert.True(result.IsValid);
         }
 
         [Fact]
-        public void HeroValidation_RuleFor_NotEmpty()
+        public void HeroValidationCollection_RuleFor_NotEmpty()
         {
             // Given empty name.
             var hero = ValidHero;
             hero.Name = string.Empty;
 
             // When validated.
-            var result = _heroValidation.Validate(hero);
+            var result = _HeroValidationCollection.Validate(hero);
 
             // Then should fail validation with one error.
             Assert.False(result.IsValid);
@@ -49,14 +49,14 @@ namespace TourOfHeroes.Web.Tests.Pages.Heroes.Validation
         }
 
         [Fact]
-        public void HeroValidation_RuleFor_MaximumLength()
+        public void HeroValidationCollection_RuleFor_MaximumLength()
         {
             // Given name that is too long.
             var hero = ValidHero;
-            hero.Name = new string(Enumerable.Repeat('a', HeroValidation.HeroNameMaxLength + 1).ToArray());
+            hero.Name = new string(Enumerable.Repeat('a', HeroValidationCollection.HeroNameMaxLength + 1).ToArray());
 
             // When validated.
-            var result = _heroValidation.Validate(hero);
+            var result = _HeroValidationCollection.Validate(hero);
 
             // Then should fail validation with one error.
             Assert.False(result.IsValid);
@@ -68,7 +68,7 @@ namespace TourOfHeroes.Web.Tests.Pages.Heroes.Validation
         private Hero ValidHero => new Hero
         {
             Id = 1,
-            Name = new string(Enumerable.Repeat('a', HeroValidation.HeroNameMaxLength).ToArray())
+            Name = new string(Enumerable.Repeat('a', HeroValidationCollection.HeroNameMaxLength).ToArray())
         };
     }
 }

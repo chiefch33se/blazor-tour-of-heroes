@@ -3,7 +3,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using BlazorState;
 using MediatR;
-using TourOfHeroes.Web.Shared;
+using TourOfHeroes.Web.Common;
 using TourOfHeroes.Web.Pages.Heroes.Models;
 
 namespace TourOfHeroes.Web.Pages.Heroes.State
@@ -14,12 +14,12 @@ namespace TourOfHeroes.Web.Pages.Heroes.State
         /// <summary>
         /// Deals with the side effects of dispatching a <see cref="HeroesState.CreateAction"/> and updates the state accordingly.
         /// </summary>
-        public class HandleCreate : BaseHandler<HeroesState.CreateAction>
+        internal class HandleCreate : BaseHandler<HeroesState.CreateAction>
         {
             /// <summary>
             /// Initializes a new instance of the <see cref="HandleCreate"/> class.
             /// </summary>
-            /// <param name="store">The application store to create with.</param>
+            /// <param name="store">The single source of truth to create with.</param>
             public HandleCreate(IStore store) 
                 : base(store) 
             {
@@ -31,9 +31,9 @@ namespace TourOfHeroes.Web.Pages.Heroes.State
                 // TODO: Make service call.
                 var id = 1;
 
-                if (_heroesState.Heroes.Any())
+                if (HeroesState.Heroes.Any())
                 {
-                    id = _heroesState.Heroes.Max(hero => hero.Id + 1);
+                    id = HeroesState.Heroes.Max(hero => hero.Id + 1);
                 }
 
                 var heroToAppend = new Hero
@@ -42,7 +42,7 @@ namespace TourOfHeroes.Web.Pages.Heroes.State
                     Name = aAction.Name
                 };
 
-                _heroesState.Heroes.Add(heroToAppend);
+                HeroesState.Heroes.Add(heroToAppend);
 
                 return Unit.Task;
             }

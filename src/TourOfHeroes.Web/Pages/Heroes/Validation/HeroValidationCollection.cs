@@ -6,17 +6,17 @@ namespace TourOfHeroes.Web.Pages.Heroes.Validation
     /// <summary>
     /// Validation rules for <see cref="Hero"/>.
     /// </summary>
-    public class HeroValidation : AbstractValidator<Hero>
+    public class HeroValidationCollection : AbstractValidator<Hero>
     {
         /// <summary>
         /// The maximum length that <see cref="Hero.Name"/> can be.
         /// </summary>
-        public static int HeroNameMaxLength = 50;
+        public const int HeroNameMaxLength = 50;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="HeroValidation"/> class.
+        /// Initializes a new instance of the <see cref="HeroValidationCollection"/> class.
         /// </summary>
-        public HeroValidation()
+        public HeroValidationCollection()
         {
             RuleFor(hero => hero.Name).NotEmpty().WithMessage("Name is required");
             RuleFor(hero => hero.Name).MaximumLength(HeroNameMaxLength).WithMessage("Name is too long");

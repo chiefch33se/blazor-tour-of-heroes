@@ -8,7 +8,7 @@ namespace TourOfHeroes.Web.Pages.Heroes.State
         /// <summary>
         /// Action for creating a <see cref="Hero"/>.
         /// </summary>
-        public class CreateAction : IAction
+        internal class CreateAction : IAction
         {
             /// <summary>
             /// Gets the name of the <see cref="Hero"/>.

@@ -4,7 +4,7 @@ namespace TourOfHeroes.Web.Pages.Heroes.State
 {
     public partial class HeroesState 
     {
-        public class RetrieveOneAction : IAction
+        internal class RetrieveOneAction : IAction
         {
             public int Id { get; private set; }
 

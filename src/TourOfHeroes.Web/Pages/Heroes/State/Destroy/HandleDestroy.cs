@@ -3,7 +3,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using BlazorState;
 using MediatR;
-using TourOfHeroes.Web.Shared;
+using TourOfHeroes.Web.Common;
 
 namespace TourOfHeroes.Web.Pages.Heroes.State
 {
@@ -13,12 +13,12 @@ namespace TourOfHeroes.Web.Pages.Heroes.State
         /// <summary>
         /// Deals with the side effects of dispatching a <see cref="HeroesState.DestroyAction"/> and updates the state accordingly.
         /// </summary>
-        public class HandleDestroy : BaseHandler<HeroesState.DestroyAction>
+        internal class HandleDestroy : BaseHandler<HeroesState.DestroyAction>
         {
             /// <summary>
             /// Initializes a new instance of the <see cref="HandleDestroy"/> class.
             /// </summary>
-            /// <param name="store">The application store to create with.</param>
+            /// <param name="store">The single source of truth to create with.</param>
             public HandleDestroy(IStore store) 
                 : base(store) 
             {
@@ -29,9 +29,9 @@ namespace TourOfHeroes.Web.Pages.Heroes.State
             {
                 // TODO: Make service call.
 
-                var itemToDelete = _heroesState.Heroes.FirstOrDefault(hero => hero.Id == aAction.Id);
+                var itemToDelete = HeroesState.Heroes.FirstOrDefault(hero => hero.Id == aAction.Id);
                 
-                var result = _heroesState.Heroes.Remove(itemToDelete);
+                var result = HeroesState.Heroes.Remove(itemToDelete);
                 
                 return Unit.Task;
             }

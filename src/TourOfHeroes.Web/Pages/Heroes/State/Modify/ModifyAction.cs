@@ -9,7 +9,7 @@ namespace TourOfHeroes.Web.Pages.Heroes.State
         /// <summary>
         /// Action for modifying a <see cref="Hero"/>.
         /// </summary>
-        public class ModifyAction: IAction
+        internal class ModifyAction: IAction
         {
             /// <summary>
             /// Gets the modified <see cref="Hero"/>.

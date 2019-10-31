@@ -23,14 +23,14 @@ namespace TourOfHeroes.Web.Pages.Heroes.Containers
         public int HeroId { get; set; }
 
         /// <summary>
-        /// A value indicating whether the given hero exists.
+        /// Gets or sets a value indicating whether the given hero exists.
         /// </summary>
-        protected bool _heroNotFound = false;
+        public bool HeroNotFound { get; set; }
 
         /// <summary>
-        /// Backing field for the edit form.
+        /// Gets or sets the backing property for the edit form.
         /// </summary>
-        protected Hero _hero = new Hero();
+        public Hero Hero { get; set; }
 
         /// <summary>
         /// Gets the heroes state.
@@ -42,7 +42,7 @@ namespace TourOfHeroes.Web.Pages.Heroes.Containers
         /// </summary>
         protected void Modify()
         {
-            Mediator.Send(new HeroesState.ModifyAction(_hero));
+            Mediator.Send(new HeroesState.ModifyAction(Hero));
             NavigateBack();
         }
 
@@ -50,11 +50,11 @@ namespace TourOfHeroes.Web.Pages.Heroes.Containers
         protected override void OnParametersSet() 
         {
             Mediator.Send(new HeroesState.RetrieveOneAction(HeroId));
-            _heroNotFound = HeroesState.Hero is null;
+            HeroNotFound = HeroesState.Hero is null;
 
-            if (_heroNotFound == false)
+            if (HeroNotFound == false)
             {
-                _hero.Id = HeroesState.Hero.Id;
+                Hero.Id = HeroesState.Hero.Id;
             }
         }
 

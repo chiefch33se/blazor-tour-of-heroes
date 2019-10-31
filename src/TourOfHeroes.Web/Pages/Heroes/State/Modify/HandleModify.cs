@@ -3,7 +3,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using BlazorState;
 using MediatR;
-using TourOfHeroes.Web.Shared;
+using TourOfHeroes.Web.Common;
 
 namespace TourOfHeroes.Web.Pages.Heroes.State
 {
@@ -13,12 +13,12 @@ namespace TourOfHeroes.Web.Pages.Heroes.State
         /// <summary>
         /// Deals with the side effects of dispatching a <see cref="HeroesState.ModifyAction"/> and updates the state accordingly.
         /// </summary>
-        public class HandleModify : BaseHandler<HeroesState.ModifyAction>
+        internal class HandleModify : BaseHandler<HeroesState.ModifyAction>
         {
             /// <summary>
             /// Initializes a new instance of the <see cref="HandleModify"/> class.
             /// </summary>
-            /// <param name="store">The application store to create with.</param>
+            /// <param name="store">The single source of truth to create with.</param>
             public HandleModify(IStore store) 
                 : base(store)
             {
@@ -28,7 +28,7 @@ namespace TourOfHeroes.Web.Pages.Heroes.State
             public override Task<Unit> Handle(HeroesState.ModifyAction aAction, CancellationToken aCancellationToken)
             {
                 // TODO: Make service call.
-                var heroToModify = _heroesState.Heroes.SingleOrDefault(hero => hero.Id == aAction.Hero.Id);
+                var heroToModify = HeroesState.Heroes.SingleOrDefault(hero => hero.Id == aAction.Hero.Id);
                 heroToModify.Name = aAction.Hero.Name;
 
                 return Unit.Task;

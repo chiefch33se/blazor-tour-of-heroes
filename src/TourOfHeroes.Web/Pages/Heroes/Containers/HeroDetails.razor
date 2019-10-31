@@ -3,7 +3,7 @@
 @inherits HeroDetailsBase
 
 <div class="container">
-    @if (_heroNotFound)
+    @if (HeroNotFound)
     {
         <div class="alert alert-warning" role="alert">
             <strong>Oh no!</strong> That hero couldn't be found!
@@ -19,11 +19,11 @@
         
         <div class="card">
             <div class="card-body">
-            <EditForm Model="@_hero" OnValidSubmit="@Modify" id="modify">
+            <EditForm Model="@Hero" OnValidSubmit="@Modify" id="modify">
                 <div class="form-group mx-sm-3 mb-2">     
-                    <FluentValidator TValidator="HeroValidation" />
+                    <FluentValidator TValidator="HeroValidationCollection" />
                     <label for="name">Name</label>
-                    <InputText id="name" @bind-Value="@_hero.Name" class="form-control" type="text" placeholder="@HeroesState.Hero.Name" />
+                    <InputText id="name" @bind-Value="@Hero.Name" class="form-control" type="text" placeholder="@HeroesState.Hero.Name" />
                 </div>
                 <div>
                     <ValidationSummary />
