@@ -20,7 +20,7 @@ namespace TourOfHeroes.Web.Pages.Heroes.Containers
         /// <summary>
         /// Gets the heroes state.
         /// </summary>
-        protected HeroesState _heroesState => GetState<HeroesState>();
+        protected HeroesState HeroesState => GetState<HeroesState>();
 
         /// <summary>
         /// Backing field for the create form.
@@ -57,7 +57,7 @@ namespace TourOfHeroes.Web.Pages.Heroes.Containers
         /// <inheritdoc/>
         protected override void OnInitialized()
         {
-            if (_heroesState.Heroes.Any() == false)
+            if (HeroesState.Heroes.Any() == false)
             {
                 Mediator.Send(new HeroesState.RetrieveManyAction());
             }

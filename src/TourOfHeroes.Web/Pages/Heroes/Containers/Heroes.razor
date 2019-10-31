@@ -25,7 +25,7 @@
     </div>
 
     <div class="card-columns">
-        @foreach (var hero in _heroesState.Heroes)
+        @foreach (var hero in HeroesState.Heroes)
         {
             <div class="card">
                 <div class="card-body">
@@ -40,7 +40,7 @@
         }
     </div>
 
-    @if (_heroesState.Heroes.Any() == false)
+    @if (HeroesState.Heroes.Any() == false)
     {
         <div class="alert alert-info" role="alert">
             <strong>Oh no!</strong> It looks like you don't have any heroes 😕
