@@ -47,7 +47,4 @@ Global
 		{6D845A18-ECAE-4909-B42F-129A1B041CDE}.Release|x86.ActiveCfg = Release|Any CPU
 		{6D845A18-ECAE-4909-B42F-129A1B041CDE}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{7BB302AC-69B6-478F-8B16-893B6E23BF32} = {AC727F60-7A1C-442F-9425-3AE52738B97E}
-	EndGlobalSection
 EndGlobal
