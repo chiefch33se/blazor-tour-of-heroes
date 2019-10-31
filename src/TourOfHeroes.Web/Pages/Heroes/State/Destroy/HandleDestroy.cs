@@ -5,7 +5,7 @@ using BlazorState;
 using MediatR;
 using TourOfHeroes.Web.Shared;
 
-namespace TourOfHeroes.Web.Pages.Heroes.Feature
+namespace TourOfHeroes.Web.Pages.Heroes.State
 {
     public partial class HeroesState
     {

@@ -1,7 +1,7 @@
 using BlazorState;
 using TourOfHeroes.Web.Pages.Heroes.Models;
 
-namespace TourOfHeroes.Web.Pages.Heroes.Feature
+namespace TourOfHeroes.Web.Pages.Heroes.State
 {
     public partial class HeroesState 
     {
