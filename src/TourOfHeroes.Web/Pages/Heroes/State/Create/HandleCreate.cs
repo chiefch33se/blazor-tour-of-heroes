@@ -8,12 +8,24 @@ using TourOfHeroes.Web.Pages.Heroes.Models;
 
 namespace TourOfHeroes.Web.Pages.Heroes.State
 {
+    /// <inheritdoc/>
     public partial class HeroesState
     {
+        /// <summary>
+        /// Deals with the side effects of dispatching a <see cref="HeroesState.CreateAction"/> and updates the state accordingly.
+        /// </summary>
         public class HandleCreate : BaseHandler<HeroesState.CreateAction>
         {
-            public HandleCreate(IStore store) : base(store) { }
+            /// <summary>
+            /// Initializes a new instance of the <see cref="HandleCreate"/> class.
+            /// </summary>
+            /// <param name="store">The application store to create with.</param>
+            public HandleCreate(IStore store) 
+                : base(store) 
+            {
+            }
 
+            /// <inheritdoc/>
             public override Task<Unit> Handle(HeroesState.CreateAction aAction, CancellationToken aCancellationToken)
             {
                 // TODO: Make service call.
