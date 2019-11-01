@@ -24,7 +24,12 @@ namespace TourOfHeroes.Web.Pages.Heroes.State
             {
             }
 
-            /// <inheritdoc/>
+            /// <summary>
+            /// Handles the dispatched Action, and updates the state.
+            /// </summary>
+            /// <param name="aAction">The Action to handle.</param>
+            /// <param name="aCancellationToken">Propagates notification that operations should be canceled.</param>
+            /// <returns>A <see cref"Task{Unit}"/> instance.</returns>
             public override Task<Unit> Handle(HeroesState.ModifyAction aAction, CancellationToken aCancellationToken)
             {
                 // TODO: Make service call.
