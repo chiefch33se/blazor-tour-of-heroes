@@ -13,17 +13,17 @@ namespace TourOfHeroes.Web.Pages.Heroes.State
         /// <summary>
         /// Deals with the side effects of dispatching a <see cref="HeroesState.DestroyAction"/> and updates the state accordingly.
         /// </summary>
-        protected internal class HandleDestroy : BaseHandler<HeroesState.DestroyAction>
+        public class HandleDestroy : BaseHandler<HeroesState.DestroyAction>
         {
             /// <summary>
             /// Initializes a new instance of the <see cref="HandleDestroy"/> class.
             /// </summary>
             /// <param name="store">The single source of truth to create with.</param>
-            public HandleDestroy(IStore store) 
-                : base(store) 
+            public HandleDestroy(IStore store)
+                : base(store)
             {
             }
-          
+
             /// <summary>
             /// Handles the dispatched Action, and updates the state.
             /// </summary>
@@ -35,9 +35,9 @@ namespace TourOfHeroes.Web.Pages.Heroes.State
                 // TODO: Make service call.
 
                 var itemToDelete = HeroesState.Heroes.FirstOrDefault(hero => hero.Id == aAction.Id);
-                
+
                 var result = HeroesState.Heroes.Remove(itemToDelete);
-                
+
                 return Unit.Task;
             }
         }

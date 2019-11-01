@@ -1,9 +1,9 @@
 using System.Linq;
-using TourOfHeroes.Web.Pages.Heroes.Models;
-using TourOfHeroes.Web.Pages.Heroes.Validation;
+using TourOfHeroes.Web.Common.Models;
+using TourOfHeroes.Web.Common.Models.Validation;
 using Xunit;
 
-namespace TourOfHeroes.Web.Tests.Pages.Heroes.Validation
+namespace TourOfHeroes.Web.Tests.Common.Validation
 {
     /// <summary>
     /// Unit tests for <see cref="HeroValidationCollection"/>.

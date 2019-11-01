@@ -1,14 +1,14 @@
 using BlazorState;
 
-namespace TourOfHeroes.Web.Pages.Heroes.State
+namespace TourOfHeroes.Web.Pages.Details.State
 {
     /// <inheritdoc/>
-    public partial class HeroesState
+    public partial class DetailsState
     {
         /// <summary>
         /// Action for retrieving a single <see cref="Hero"/>.
         /// </summary>
-        protected internal class RetrieveOneAction : IAction
+        public class RetrieveOneAction : IAction
         {
             /// <summary>
             /// Gets or sets the ID of the <see cref="Hero"/> to retrieve.

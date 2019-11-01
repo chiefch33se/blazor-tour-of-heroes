@@ -1,7 +1,8 @@
 using System.Linq;
 using System.Threading;
-using TourOfHeroes.Web.Pages.Heroes.Models;
+using TourOfHeroes.Web.Common.Models;
 using TourOfHeroes.Web.Pages.Heroes.State;
+using TourOfHeroes.Web.Tests.Helpers;
 using Xunit;
 
 namespace TourOfHeroes.Web.Tests.Pages.Heroes.State.Create
@@ -9,7 +10,7 @@ namespace TourOfHeroes.Web.Tests.Pages.Heroes.State.Create
     /// <summary>
     /// Unit tests for <see cref="HeroesState.HandleCreate"/>.
     /// </summary>
-    public class HandleCreateTests : BaseHeroStateTestSetup
+    public class HandleCreateTests : BaseStoreTestSetup
     {
         /// <summary>
         /// The <see cref="HeroesState.HandleCreate"/> to test with.
@@ -21,7 +22,7 @@ namespace TourOfHeroes.Web.Tests.Pages.Heroes.State.Create
         /// </summary>
         public HandleCreateTests()
         {
-            _handleCreate= new HeroesState.HandleCreate(_mockStore.Object);
+            _handleCreate = new HeroesState.HandleCreate(_mockStore.Object);
         }
 
         /// <summary>

@@ -3,12 +3,12 @@ using BlazorState;
 namespace TourOfHeroes.Web.Pages.Heroes.State
 {
     /// <inheritdoc/>
-    public partial class HeroesState 
+    public partial class HeroesState
     {
         /// <summary>
         /// Action for destroying a <see cref="Hero"/>.
         /// </summary>
-        protected internal class DestroyAction: IAction
+        public class DestroyAction : IAction
         {
             /// <summary>
             /// Gets the ID of the <see cref="Hero"/>.

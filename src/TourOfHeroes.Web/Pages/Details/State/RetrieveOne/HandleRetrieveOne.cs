@@ -5,21 +5,21 @@ using BlazorState;
 using MediatR;
 using TourOfHeroes.Web.Common;
 
-namespace TourOfHeroes.Web.Pages.Heroes.State
+namespace TourOfHeroes.Web.Pages.Details.State
 {
     /// <inheritdoc/>
-    public partial class HeroesState
+    public partial class DetailsState
     {
         /// <summary>
-        /// Deals with the side effects of dispatching a <see cref="HeroesState.ModifyAction"/> and updates the state accordingly.
+        /// Deals with the side effects of dispatching a <see cref="DetailsState.RetrieveOneAction"/> and updates the state accordingly.
         /// </summary>
-        protected internal class HandleModify : BaseHandler<HeroesState.ModifyAction>
+        public class HandleRetrieveOne : BaseHandler<DetailsState.RetrieveOneAction>
         {
             /// <summary>
-            /// Initializes a new instance of the <see cref="HandleModify"/> class.
+            /// Initializes a new instance of the <see cref="HandleRetrieveOne"/> class.
             /// </summary>
             /// <param name="store">The single source of truth to create with.</param>
-            public HandleModify(IStore store)
+            public HandleRetrieveOne(IStore store)
                 : base(store)
             {
             }
@@ -30,15 +30,10 @@ namespace TourOfHeroes.Web.Pages.Heroes.State
             /// <param name="aAction">The Action to handle.</param>
             /// <param name="aCancellationToken">Propagates notification that operations should be canceled.</param>
             /// <returns>A <see cref"Task{Unit}"/> instance.</returns>
-            public override Task<Unit> Handle(HeroesState.ModifyAction aAction, CancellationToken aCancellationToken)
+            public override Task<Unit> Handle(DetailsState.RetrieveOneAction aAction, CancellationToken aCancellationToken)
             {
                 // TODO: Make service call.
-                var heroToModify = HeroesState.Heroes.SingleOrDefault(hero => hero.Id == aAction.Hero.Id);
-
-                if (heroToModify != null)
-                {
-                    heroToModify.Name = aAction?.Hero?.Name;
-                }
+                DetailsState.Hero = HeroesState.Heroes.FirstOrDefault(hero => hero.Id == aAction.Id);
 
                 return Unit.Task;
             }

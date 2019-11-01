@@ -1,9 +1,9 @@
 using BlazorState;
 using Microsoft.AspNetCore.Components;
-using TourOfHeroes.Web.Pages.Heroes.Models;
-using TourOfHeroes.Web.Pages.Heroes.State;
+using TourOfHeroes.Web.Common.Models;
+using TourOfHeroes.Web.Pages.Details.State;
 
-namespace TourOfHeroes.Web.Pages.Heroes.Containers
+namespace TourOfHeroes.Web.Pages.Details.Containers
 {
     /// <summary>
     /// Hero details.
@@ -35,26 +35,26 @@ namespace TourOfHeroes.Web.Pages.Heroes.Containers
         /// <summary>
         /// Gets the heroes state.
         /// </summary>
-        protected HeroesState HeroesState => GetState<HeroesState>();
+        protected DetailsState DetailsState => GetState<DetailsState>();
 
         /// <summary>
         /// Updates the given <see cref="Hero"/>.
         /// </summary>
         protected void Modify()
         {
-            Mediator.Send(new HeroesState.ModifyAction(_hero));
+            Mediator.Send(new DetailsState.ModifyAction(_hero));
             NavigateBack();
         }
 
         /// <inheritdoc/>
-        protected override void OnParametersSet() 
+        protected override void OnParametersSet()
         {
-            Mediator.Send(new HeroesState.RetrieveOneAction(HeroId));
-            HeroNotFound = HeroesState.Hero is null;
+            Mediator.Send(new DetailsState.RetrieveOneAction(HeroId));
+            HeroNotFound = DetailsState.Hero is null;
 
             if (HeroNotFound == false)
             {
-                _hero.Id = HeroesState.Hero.Id;
+                _hero.Id = DetailsState.Hero.Id;
             }
         }
 

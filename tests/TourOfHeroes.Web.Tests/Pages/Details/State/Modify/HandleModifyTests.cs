@@ -1,28 +1,30 @@
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using TourOfHeroes.Web.Pages.Heroes.Models;
-using TourOfHeroes.Web.Pages.Heroes.State;
+using TourOfHeroes.Web.Common.Models;
+using TourOfHeroes.Web.Pages.Details.State;
+using TourOfHeroes.Web.Tests.Helpers;
 using Xunit;
 
-namespace TourOfHeroes.Web.Tests.Pages.Heroes.State.Modify
+namespace TourOfHeroes.Web.Tests.Pages.Details.State.Modify
 {
+
     /// <summary>
-    /// Unit tests for <see cref="HeroesState.HandleModify"/>.
+    /// Unit tests for <see cref="DetailsState.HandleModify"/>.
     /// </summary>
-    public class HandleModifyTests : BaseHeroStateTestSetup
+    public class HandleModifyTests : BaseStoreTestSetup
     {
         /// <summary>
-        /// The <see cref="HeroesState.HandleModify"/> to test with.
+        /// The <see cref="DetailsState.HandleModify"/> to test with.
         /// </summary>
-        private readonly HeroesState.HandleModify _handleModify;
+        private readonly DetailsState.HandleModify _handleModify;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="HandleModifyTests"/> class.
         /// </summary>
         public HandleModifyTests()
         {
-            _handleModify = new HeroesState.HandleModify(_mockStore.Object);
+            _handleModify = new DetailsState.HandleModify(_mockStore.Object);
         }
 
         /// <summary>
@@ -46,7 +48,7 @@ namespace TourOfHeroes.Web.Tests.Pages.Heroes.State.Modify
                 Id = id,
                 Name = name
             };
-            var action = new HeroesState.ModifyAction(payload);
+            var action = new DetailsState.ModifyAction(payload);
 
             // Act.
             _handleModify.Handle(action, new CancellationToken());
@@ -63,7 +65,7 @@ namespace TourOfHeroes.Web.Tests.Pages.Heroes.State.Modify
         public async Task HandleModify_NotFound_IsHandled()
         {
             // Arrange.
-            var action = new HeroesState.ModifyAction(new Hero());
+            var action = new DetailsState.ModifyAction(new Hero());
 
             // Act.
             var exception = await Record.ExceptionAsync(() => _handleModify.Handle(action, new CancellationToken()));
@@ -73,3 +75,4 @@ namespace TourOfHeroes.Web.Tests.Pages.Heroes.State.Modify
         }
     }
 }
+

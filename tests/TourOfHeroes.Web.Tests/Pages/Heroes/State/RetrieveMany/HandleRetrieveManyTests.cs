@@ -1,7 +1,8 @@
 using System.Collections.Generic;
 using System.Threading;
-using TourOfHeroes.Web.Pages.Heroes.Models;
+using TourOfHeroes.Web.Common.Models;
 using TourOfHeroes.Web.Pages.Heroes.State;
+using TourOfHeroes.Web.Tests.Helpers;
 using Xunit;
 
 namespace TourOfHeroes.Web.Tests.Pages.Heroes.State.RetrieveMany
@@ -9,7 +10,7 @@ namespace TourOfHeroes.Web.Tests.Pages.Heroes.State.RetrieveMany
     /// <summary>
     /// Unit tests for <see cref="HeroesState.HandleRetrieveMany"/>.
     /// </summary>
-    public class HandleRetrieveManyTests : BaseHeroStateTestSetup
+    public class HandleRetrieveManyTests : BaseStoreTestSetup
     {
         /// <summary>
         /// The <see cref="HeroesState.HandleRetrieveMany"/> to test with.

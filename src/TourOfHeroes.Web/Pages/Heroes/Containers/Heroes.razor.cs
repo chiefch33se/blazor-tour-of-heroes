@@ -1,7 +1,7 @@
 using System.Linq;
 using BlazorState;
 using Microsoft.AspNetCore.Components;
-using TourOfHeroes.Web.Pages.Heroes.Models;
+using TourOfHeroes.Web.Common.Models;
 using TourOfHeroes.Web.Pages.Heroes.State;
 
 namespace TourOfHeroes.Web.Pages.Heroes.Containers
@@ -51,9 +51,9 @@ namespace TourOfHeroes.Web.Pages.Heroes.Containers
         /// <param name="id">The ID of the <see cref="Hero"/> to modify.</param>
         protected void Modify(int id)
         {
-            NavigationManager.NavigateTo($"/heroes/{id}");
+            NavigationManager.NavigateTo($"/details/{id}");
         }
-        
+
         /// <inheritdoc/>
         protected override void OnInitialized()
         {

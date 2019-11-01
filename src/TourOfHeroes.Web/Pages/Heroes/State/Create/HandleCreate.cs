@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 using BlazorState;
 using MediatR;
 using TourOfHeroes.Web.Common;
-using TourOfHeroes.Web.Pages.Heroes.Models;
+using TourOfHeroes.Web.Common.Models;
 
 namespace TourOfHeroes.Web.Pages.Heroes.State
 {
@@ -14,14 +14,14 @@ namespace TourOfHeroes.Web.Pages.Heroes.State
         /// <summary>
         /// Deals with the side effects of dispatching a <see cref="HeroesState.CreateAction"/> and updates the state accordingly.
         /// </summary>
-        protected internal class HandleCreate : BaseHandler<HeroesState.CreateAction>
+        public class HandleCreate : BaseHandler<HeroesState.CreateAction>
         {
             /// <summary>
             /// Initializes a new instance of the <see cref="HandleCreate"/> class.
             /// </summary>
             /// <param name="store">The single source of truth to create with.</param>
-            public HandleCreate(IStore store) 
-                : base(store) 
+            public HandleCreate(IStore store)
+                : base(store)
             {
             }
 

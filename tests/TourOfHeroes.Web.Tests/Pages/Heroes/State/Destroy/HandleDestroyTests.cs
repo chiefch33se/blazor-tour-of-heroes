@@ -1,6 +1,7 @@
 using System.Threading;
-using TourOfHeroes.Web.Pages.Heroes.Models;
+using TourOfHeroes.Web.Common.Models;
 using TourOfHeroes.Web.Pages.Heroes.State;
+using TourOfHeroes.Web.Tests.Helpers;
 using Xunit;
 
 namespace TourOfHeroes.Web.Tests.Pages.Heroes.State.Destroy
@@ -8,7 +9,7 @@ namespace TourOfHeroes.Web.Tests.Pages.Heroes.State.Destroy
     /// <summary>
     /// Unit tests for <see cref="HeroesState.HandleDestroy"/>.
     /// </summary>
-    public class HandleDestroyTests : BaseHeroStateTestSetup
+    public class HandleDestroyTests : BaseStoreTestSetup
     {
         /// <summary>
         /// The <see cref="HeroesState.HandleDestroy"/> to test with.
@@ -38,7 +39,7 @@ namespace TourOfHeroes.Web.Tests.Pages.Heroes.State.Destroy
             {
                 Id = payload
             });
-            
+
             // Act.
             _handleDestroy.Handle(action, new CancellationToken());
 

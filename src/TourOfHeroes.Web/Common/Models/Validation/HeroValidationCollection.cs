@@ -1,7 +1,6 @@
 using FluentValidation;
-using TourOfHeroes.Web.Pages.Heroes.Models;
 
-namespace TourOfHeroes.Web.Pages.Heroes.Validation
+namespace TourOfHeroes.Web.Common.Models.Validation
 {
     /// <summary>
     /// Validation rules for <see cref="Hero"/>.

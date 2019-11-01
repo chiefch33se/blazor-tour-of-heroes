@@ -4,12 +4,12 @@ using BlazorState;
 namespace TourOfHeroes.Web.Pages.Heroes.State
 {
     /// <inheritdoc/>
-    public partial class HeroesState 
+    public partial class HeroesState
     {
         /// <summary>
         /// Action for creating a <see cref="Hero"/>.
         /// </summary>
-        protected internal class CreateAction : IAction
+        public class CreateAction : IAction
         {
             /// <summary>
             /// Gets the name of the <see cref="Hero"/>.

@@ -1,14 +1,14 @@
 using System;
-using TourOfHeroes.Web.Pages.Heroes.Models;
-using TourOfHeroes.Web.Pages.Heroes.State;
+using TourOfHeroes.Web.Common.Models;
+using TourOfHeroes.Web.Pages.Details.State;
 using Xunit;
 
-namespace TourOfHeroes.Web.Tests.Pages.Heroes.State.Modify
+namespace TourOfHeroes.Web.Tests.Pages.Details.State.Modify
 {
     /// <summary>
     /// Unit tests for <see cref="HeroesState.ModifyAction"/>.
     /// </summary>
-    public class ModifyActionTests : HeroesState
+    public class ModifyActionTests
     {
         /// <summary>
         /// Happy path.
@@ -26,7 +26,7 @@ namespace TourOfHeroes.Web.Tests.Pages.Heroes.State.Modify
                 Id = expectedId,
                 Name = expectedName
             };
-            var action = new HeroesState.ModifyAction(payload);
+            var action = new DetailsState.ModifyAction(payload);
 
             // It should be instanciated with the given payload.
             Assert.Equal(payload, action.Hero);
@@ -39,7 +39,7 @@ namespace TourOfHeroes.Web.Tests.Pages.Heroes.State.Modify
         public void CreateAction_NullPayload_Throws()
         {
             // Given an invalid payload.
-            Assert.Throws<ArgumentNullException>(() => new HeroesState.ModifyAction(null));
+            Assert.Throws<ArgumentNullException>(() => new DetailsState.ModifyAction(null));
         }
     }
 }

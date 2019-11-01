@@ -1,8 +1,8 @@
 using System.Collections.Generic;
-using TourOfHeroes.Web.Pages.Heroes.Models;
+using TourOfHeroes.Web.Common.Models;
 using Xunit;
 
-namespace TourOfHeroes.Web.Tests.Pages.Heroes.Models
+namespace TourOfHeroes.Web.Tests.Common.Models
 {
     /// <summary>
     /// Unit tests for <see cref="Hero"/>.

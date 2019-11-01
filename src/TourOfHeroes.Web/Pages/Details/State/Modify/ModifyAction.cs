@@ -1,16 +1,16 @@
 using System;
 using BlazorState;
-using TourOfHeroes.Web.Pages.Heroes.Models;
+using TourOfHeroes.Web.Common.Models;
 
-namespace TourOfHeroes.Web.Pages.Heroes.State
+namespace TourOfHeroes.Web.Pages.Details.State
 {
     /// <inheritdoc/>
-    public partial class HeroesState
+    public partial class DetailsState
     {
         /// <summary>
         /// Action for modifying a <see cref="Hero"/>.
         /// </summary>
-        protected internal class ModifyAction : IAction
+        public class ModifyAction : IAction
         {
             /// <summary>
             /// Gets the modified <see cref="Hero"/>.

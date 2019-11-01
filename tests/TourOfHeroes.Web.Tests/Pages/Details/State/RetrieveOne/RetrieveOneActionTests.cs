@@ -1,12 +1,12 @@
-using TourOfHeroes.Web.Pages.Heroes.State;
+using TourOfHeroes.Web.Pages.Details.State;
 using Xunit;
 
-namespace TourOfHeroes.Web.Tests.Pages.Heroes.State.RetrieveOne
+namespace TourOfHeroes.Web.Tests.Pages.Details.State.RetrieveOne
 {
     /// <summary>
     /// Unit tests for <see cref="HeroesState.RetrieveOneAction"/>.
     /// </summary>
-    public class RetrieveOneActionTests : HeroesState
+    public class RetrieveOneActionTests
     {
         /// <summary>
         /// Happy path.
@@ -18,7 +18,7 @@ namespace TourOfHeroes.Web.Tests.Pages.Heroes.State.RetrieveOne
         public void RetrieveOneAction_ValidPayload_SetsPayload(int expectedPayload)
         {
             // Given a well formed action.
-            var actualPayload = new HeroesState.RetrieveOneAction(expectedPayload);
+            var actualPayload = new DetailsState.RetrieveOneAction(expectedPayload);
 
             // It should be instanciated with the given payload.
             Assert.Equal(expectedPayload, actualPayload.Id);

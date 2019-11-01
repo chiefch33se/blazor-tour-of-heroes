@@ -1,4 +1,4 @@
-namespace TourOfHeroes.Web.Pages.Heroes.Models
+namespace TourOfHeroes.Web.Common.Models
 {
     /// <summary>
     /// Represents an entity within the system.

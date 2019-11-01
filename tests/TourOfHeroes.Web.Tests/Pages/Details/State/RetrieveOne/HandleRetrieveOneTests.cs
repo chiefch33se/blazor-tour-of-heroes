@@ -1,26 +1,27 @@
 using System.Threading;
-using TourOfHeroes.Web.Pages.Heroes.Models;
-using TourOfHeroes.Web.Pages.Heroes.State;
+using TourOfHeroes.Web.Common.Models;
+using TourOfHeroes.Web.Pages.Details.State;
+using TourOfHeroes.Web.Tests.Helpers;
 using Xunit;
 
-namespace TourOfHeroes.Web.Tests.Pages.Heroes.State.RetrieveOne
+namespace TourOfHeroes.Web.Tests.Pages.Details.State.RetrieveOne
 {
     /// <summary>
     /// Unit tests for <see cref="HeroesState.HandleRetrieveOne"/>.
     /// </summary>
-    public class HandleRetrieveOneTests : BaseHeroStateTestSetup
+    public class HandleRetrieveOneTests : BaseStoreTestSetup
     {
         /// <summary>
         /// The <see cref="HeroesState.HandleRetrieveOne"/> to test with.
         /// </summary>
-        private readonly HeroesState.HandleRetrieveOne _handleRetrieveOne;
+        private readonly DetailsState.HandleRetrieveOne _handleRetrieveOne;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="HandleRetrieveOneTests"/> class.
         /// </summary>
         public HandleRetrieveOneTests()
         {
-            _handleRetrieveOne = new HeroesState.HandleRetrieveOne(_mockStore.Object);
+            _handleRetrieveOne = new DetailsState.HandleRetrieveOne(_mockStore.Object);
         }
 
         /// <summary>
@@ -33,18 +34,18 @@ namespace TourOfHeroes.Web.Tests.Pages.Heroes.State.RetrieveOne
         public void HandleRetrieveOne_ValidAction_UpdatesState(int payload)
         {
             // Arrange.
-            var action = new HeroesState.RetrieveOneAction(payload);
+            var action = new DetailsState.RetrieveOneAction(payload);
             var expected = new Hero
             {
                 Id = payload
             };
             _heroesState.Heroes.Add(expected);
-            
+
             // Act.
             _handleRetrieveOne.Handle(action, new CancellationToken());
 
             // Assert.
-            Assert.Equal(expected, _heroesState.Hero);
+            Assert.Equal(expected, _detailsState.Hero);
         }
     }
 }

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
 
-namespace TourOfHeroes.Web.Pages.Heroes.Models
+namespace TourOfHeroes.Web.Common.Models
 {
     /// <summary>
     /// Represents a Hero entity.

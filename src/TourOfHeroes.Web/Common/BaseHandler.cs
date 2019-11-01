@@ -1,4 +1,5 @@
 using BlazorState;
+using TourOfHeroes.Web.Pages.Details.State;
 using TourOfHeroes.Web.Pages.Heroes.State;
 
 namespace TourOfHeroes.Web.Common
@@ -13,6 +14,11 @@ namespace TourOfHeroes.Web.Common
         /// Gets the <see cref="HeroesState"/>.
         /// </summary>
         protected HeroesState HeroesState => Store.GetState<HeroesState>();
+
+        /// <summary>
+        /// Gets the <see cref="DetailsState"/>.
+        /// </summary>
+        protected DetailsState DetailsState => Store.GetState<DetailsState>();
 
         /// <summary>
         /// Initializes a new instance of the <see cref="BaseHandler"/> class.
