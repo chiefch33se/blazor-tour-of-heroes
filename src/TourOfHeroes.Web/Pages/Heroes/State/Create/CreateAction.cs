@@ -1,3 +1,4 @@
+using System;
 using BlazorState;
 
 namespace TourOfHeroes.Web.Pages.Heroes.State
@@ -8,7 +9,7 @@ namespace TourOfHeroes.Web.Pages.Heroes.State
         /// <summary>
         /// Action for creating a <see cref="Hero"/>.
         /// </summary>
-        internal class CreateAction : IAction
+        protected internal class CreateAction : IAction
         {
             /// <summary>
             /// Gets the name of the <see cref="Hero"/>.
@@ -19,9 +20,10 @@ namespace TourOfHeroes.Web.Pages.Heroes.State
             /// Initializes a new instance of the <see cref="CreateAction"/> class.
             /// </summary>
             /// <param name="name">The payload to create with.</param>
+            /// <exception cref="ArgumentNullException">Thrown if name is null.</exception>  
             public CreateAction(string name)
             {
-                Name = name;
+                Name = name ?? throw new ArgumentNullException(nameof(name));
             }
         }
     }
