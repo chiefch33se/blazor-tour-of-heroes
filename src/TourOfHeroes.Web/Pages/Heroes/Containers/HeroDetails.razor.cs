@@ -28,9 +28,9 @@ namespace TourOfHeroes.Web.Pages.Heroes.Containers
         public bool HeroNotFound { get; set; }
 
         /// <summary>
-        /// Gets or sets the backing property for the edit form.
+        /// Backing property for the edit form.
         /// </summary>
-        public Hero Hero { get; set; }
+        private protected Hero _hero = new Hero();
 
         /// <summary>
         /// Gets the heroes state.
@@ -42,7 +42,7 @@ namespace TourOfHeroes.Web.Pages.Heroes.Containers
         /// </summary>
         protected void Modify()
         {
-            Mediator.Send(new HeroesState.ModifyAction(Hero));
+            Mediator.Send(new HeroesState.ModifyAction(_hero));
             NavigateBack();
         }
 
@@ -54,7 +54,7 @@ namespace TourOfHeroes.Web.Pages.Heroes.Containers
 
             if (HeroNotFound == false)
             {
-                Hero.Id = HeroesState.Hero.Id;
+                _hero.Id = HeroesState.Hero.Id;
             }
         }
 

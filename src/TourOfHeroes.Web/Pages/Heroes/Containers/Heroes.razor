@@ -11,10 +11,10 @@
 
     <div class="card hero-add-form">
         <div class="card-body">
-            <EditForm class="form-inline" Model="@Hero" OnValidSubmit="@Create">
+            <EditForm class="form-inline" Model="@_hero" OnValidSubmit="@Create">
                 <div class="form-group mx-sm-3 mb-2">     
                     <FluentValidator TValidator="HeroValidationCollection" />
-                    <InputText id="name" @bind-Value="@Hero.Name" class="form-control" type="text" placeholder="Hero name" />
+                    <InputText id="name" @bind-Value="@_hero.Name" class="form-control" type="text" placeholder="Hero name" />
                 </div>
                 <button type="submit" class="btn btn-primary mb-2">Add</button>
                 <div>

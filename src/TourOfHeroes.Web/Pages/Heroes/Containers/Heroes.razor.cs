@@ -23,17 +23,17 @@ namespace TourOfHeroes.Web.Pages.Heroes.Containers
         protected HeroesState HeroesState => GetState<HeroesState>();
 
         /// <summary>
-        /// Gets or sets the backing property for the create form.
+        /// Backing field for the create form.
         /// </summary>
-        public Hero Hero { get; set; }
+        private protected Hero _hero = new Hero();
 
         /// <summary>
         /// Creates a <see cref="Hero"/>.
         /// </summary>
         protected void Create()
         {
-            Mediator.Send(new HeroesState.CreateAction(Hero.Name));
-            Hero.Name = string.Empty;
+            Mediator.Send(new HeroesState.CreateAction(_hero.Name));
+            _hero.Name = string.Empty;
         }
 
         /// <summary>
