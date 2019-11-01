@@ -8,7 +8,7 @@ namespace TourOfHeroes.Web.Pages.Heroes.State
         /// <summary>
         /// Action for retreiving a <see cref="Hero"/>.
         /// </summary>
-        internal class RetrieveManyAction : IAction
+        protected internal class RetrieveManyAction : IAction
         {
         }
     }

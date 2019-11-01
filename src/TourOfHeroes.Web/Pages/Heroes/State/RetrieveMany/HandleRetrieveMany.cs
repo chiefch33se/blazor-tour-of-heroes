@@ -14,7 +14,7 @@ namespace TourOfHeroes.Web.Pages.Heroes.State
         /// <summary>
         /// Deals with the side effects of dispatching a <see cref="HeroesState.RetrieveManyAction"/> and updates the state accordingly.
         /// </summary>
-        internal class HandleRetrieveMany : BaseHandler<HeroesState.RetrieveManyAction>
+        protected internal class HandleRetrieveMany : BaseHandler<HeroesState.RetrieveManyAction>
         {
             /// <summary>
             /// Initializes a new instance of the <see cref="HandleRetrieveMany"/> class.

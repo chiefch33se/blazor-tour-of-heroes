@@ -13,7 +13,7 @@ namespace TourOfHeroes.Web.Pages.Heroes.State
         /// <summary>
         /// Deals with the side effects of dispatching a <see cref="HeroesState.ModifyAction"/> and updates the state accordingly.
         /// </summary>
-        internal class HandleModify : BaseHandler<HeroesState.ModifyAction>
+        protected internal class HandleModify : BaseHandler<HeroesState.ModifyAction>
         {
             /// <summary>
             /// Initializes a new instance of the <see cref="HandleModify"/> class.

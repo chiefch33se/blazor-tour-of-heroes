@@ -8,7 +8,7 @@ namespace TourOfHeroes.Web.Pages.Heroes.State
         /// <summary>
         /// Action for destroying a <see cref="Hero"/>.
         /// </summary>
-        internal class DestroyAction: IAction
+        protected internal class DestroyAction: IAction
         {
             /// <summary>
             /// Gets the ID of the <see cref="Hero"/>.

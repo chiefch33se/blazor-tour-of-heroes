@@ -13,7 +13,7 @@ namespace TourOfHeroes.Web.Pages.Heroes.State
         /// <summary>
         /// Deals with the side effects of dispatching a <see cref="HeroesState.DestroyAction"/> and updates the state accordingly.
         /// </summary>
-        internal class HandleDestroy : BaseHandler<HeroesState.DestroyAction>
+        protected internal class HandleDestroy : BaseHandler<HeroesState.DestroyAction>
         {
             /// <summary>
             /// Initializes a new instance of the <see cref="HandleDestroy"/> class.

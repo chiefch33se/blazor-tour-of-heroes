@@ -14,7 +14,7 @@ namespace TourOfHeroes.Web.Pages.Heroes.State
         /// <summary>
         /// Deals with the side effects of dispatching a <see cref="HeroesState.CreateAction"/> and updates the state accordingly.
         /// </summary>
-        internal class HandleCreate : BaseHandler<HeroesState.CreateAction>
+        protected internal class HandleCreate : BaseHandler<HeroesState.CreateAction>
         {
             /// <summary>
             /// Initializes a new instance of the <see cref="HandleCreate"/> class.
