@@ -37,7 +37,7 @@ namespace TourOfHeroes.Web.Pages.Heroes.State
 
                 if (heroToModify != null)
                 {
-                    heroToModify.Name = aAction.Hero.Name;
+                    heroToModify.Name = aAction?.Hero?.Name;
                 }
 
                 return Unit.Task;

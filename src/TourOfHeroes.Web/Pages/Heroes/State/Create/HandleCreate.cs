@@ -44,7 +44,7 @@ namespace TourOfHeroes.Web.Pages.Heroes.State
                 var heroToAppend = new Hero
                 {
                     Id = id,
-                    Name = aAction.Name
+                    Name = aAction?.Name
                 };
 
                 HeroesState.Heroes.Add(heroToAppend);

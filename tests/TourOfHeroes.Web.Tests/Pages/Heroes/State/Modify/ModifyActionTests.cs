@@ -1,3 +1,4 @@
+using System;
 using TourOfHeroes.Web.Pages.Heroes.Models;
 using TourOfHeroes.Web.Pages.Heroes.State;
 using Xunit;
@@ -29,6 +30,16 @@ namespace TourOfHeroes.Web.Tests.Pages.Heroes.State.Modify
 
             // It should be instanciated with the given payload.
             Assert.Equal(payload, action.Hero);
+        }
+
+        /// <summary>
+        /// If given a null payload, the action should throw an <see cref="ArgumentNullException"/>.
+        /// </summary>
+        [Fact]
+        public void CreateAction_NullPayload_Throws()
+        {
+            // Given an invalid payload.
+            Assert.Throws<ArgumentNullException>(() => new HeroesState.ModifyAction(null));
         }
     }
 }
