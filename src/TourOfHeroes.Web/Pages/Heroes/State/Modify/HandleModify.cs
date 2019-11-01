@@ -19,7 +19,7 @@ namespace TourOfHeroes.Web.Pages.Heroes.State
             /// Initializes a new instance of the <see cref="HandleModify"/> class.
             /// </summary>
             /// <param name="store">The single source of truth to create with.</param>
-            public HandleModify(IStore store) 
+            public HandleModify(IStore store)
                 : base(store)
             {
             }
@@ -34,7 +34,11 @@ namespace TourOfHeroes.Web.Pages.Heroes.State
             {
                 // TODO: Make service call.
                 var heroToModify = HeroesState.Heroes.SingleOrDefault(hero => hero.Id == aAction.Hero.Id);
-                heroToModify.Name = aAction.Hero.Name;
+
+                if (heroToModify != null)
+                {
+                    heroToModify.Name = aAction.Hero.Name;
+                }
 
                 return Unit.Task;
             }

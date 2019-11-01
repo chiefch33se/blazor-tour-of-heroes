@@ -50,7 +50,24 @@ namespace TourOfHeroes.Web.Tests.Pages.Heroes.State.Modify
             _handleModify.Handle(action, new CancellationToken());
 
             // Assert.
-            Assert.Equal(payload.Name, _heroesState.Heroes.Single().Name);
+            Assert.Equal(payload, _heroesState.Heroes.Single());
+        }
+
+        /// <summary>
+        /// Handle modify should be able to deal with trying to modify a <see cref="Hero"/> that is not in the state.
+        /// </summary>
+        /// <returns>A <see cref="Task"/> instance.</returns>
+        [Fact]
+        public async Task HandleModify_NotFound_IsHandled()
+        {
+            // Arrange.
+            var action = new HeroesState.ModifyAction(new Hero());
+
+            // Act.
+            var exception = await Record.ExceptionAsync(() => _handleModify.Handle(action, new CancellationToken()));
+
+            // Assert.
+            Assert.Null(exception);
         }
     }
 }
