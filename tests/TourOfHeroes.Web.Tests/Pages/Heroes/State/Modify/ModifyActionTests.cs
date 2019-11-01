@@ -20,15 +20,15 @@ namespace TourOfHeroes.Web.Tests.Pages.Heroes.State.Modify
         public void ModifyAction_ValidPayload_SetsPayload(int expectedId, string expectedName)
         {
             // Given a well formed action.
-            var actualPayload = new HeroesState.ModifyAction(new Hero
+            var payload = new Hero
             {
                 Id = expectedId,
                 Name = expectedName
-            });
+            };
+            var action = new HeroesState.ModifyAction(payload);
 
             // It should be instanciated with the given payload.
-            Assert.Equal(expectedId, actualPayload.Hero.Id);
-            Assert.Equal(expectedName, actualPayload.Hero.Name);
+            Assert.Equal(payload, action.Hero);
         }
     }
 }

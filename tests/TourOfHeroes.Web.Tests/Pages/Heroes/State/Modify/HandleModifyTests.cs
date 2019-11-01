@@ -1,5 +1,6 @@
 using System.Linq;
 using System.Threading;
+using System.Threading.Tasks;
 using TourOfHeroes.Web.Pages.Heroes.Models;
 using TourOfHeroes.Web.Pages.Heroes.State;
 using Xunit;
@@ -28,10 +29,11 @@ namespace TourOfHeroes.Web.Tests.Pages.Heroes.State.Modify
         /// Happy path.
         /// </summary>
         /// <param name="id">The ID to test with.</param>
+        /// <param name="name">The Name to test with.</param>
         [Theory]
-        [InlineData(1)]
-        [InlineData(2)]
-        public void HandleModify_ValidAction_UpdatesState(int id)
+        [InlineData(1, "Red Tornado")]
+        [InlineData(2, "Blue Tornado")]
+        public void HandleModify_ValidAction_UpdatesState(int id, string name)
         {
             // Arrange.
             _heroesState.Heroes.Add(new Hero
@@ -42,7 +44,7 @@ namespace TourOfHeroes.Web.Tests.Pages.Heroes.State.Modify
             var payload = new Hero
             {
                 Id = id,
-                Name = "Red Tornado"
+                Name = name
             };
             var action = new HeroesState.ModifyAction(payload);
 
