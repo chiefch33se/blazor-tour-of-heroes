@@ -5,13 +5,14 @@ using Xunit;
 namespace TourOfHeroes.Web.Tests.Pages.Heroes.State.Create
 {
     /// <summary>
-    /// Unit tests for <see cref="CreateAction"/>.
+    /// Unit tests for <see cref="HeroesState.CreateAction"/>.
     /// </summary>
     public class CreateActionTests : HeroesState
     {
         /// <summary>
         /// Happy path.
         /// </summary>
+        /// <param name="expectedPayload">The payload to test with.</param>
         [Theory]
         [InlineData("Magneta")]
         [InlineData("Tornado")]
