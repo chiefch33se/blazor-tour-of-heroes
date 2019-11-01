@@ -59,22 +59,25 @@ namespace TourOfHeroes.Web.Tests.Pages.Heroes.State.Create
         /// <summary>
         /// The ID should increment by one every time an item is added.
         /// </summary>
-        /// <param name="expected">The expected ID to be given to the new Hero added to the state.</param>
+        /// <param name="numberOfExistingHeroes">The number of existing Heroes in state after hydration.</param>
         [Theory]
-        [InlineData(2)]
-        [InlineData(3)]
-        public void HandleCreate_WithExistingItems_HasCorrectId(int expected)
+        [InlineData(0)]
+        [InlineData(1)]
+        public void HandleCreate_WithExistingItems_HasCorrectId(int numberOfExistingHeroes)
         {
             // Arrange.
             var payload = "Tornado";
             var action = new HeroesState.CreateAction(payload);
-            for (int i = 0; i < expected; i++)
+            for (int i = 0; i <= numberOfExistingHeroes; i++)
             {
                 _heroesState.Heroes.Add(new Hero
                 {
                     Id = i
                 });
             }
+
+            // Should be one higher than the number of Heroes already in the state.
+            var expected = numberOfExistingHeroes + 1;
 
             // Act.
             _handleCreate.Handle(action, new CancellationToken());
