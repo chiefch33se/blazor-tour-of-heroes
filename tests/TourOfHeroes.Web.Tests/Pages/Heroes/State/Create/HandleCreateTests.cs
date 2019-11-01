@@ -1,9 +1,7 @@
 using System.Linq;
 using System.Threading;
-using BlazorState;
 using TourOfHeroes.Web.Pages.Heroes.Models;
 using TourOfHeroes.Web.Pages.Heroes.State;
-using Moq;
 using Xunit;
 
 namespace TourOfHeroes.Web.Tests.Pages.Heroes.State.Create
@@ -11,7 +9,7 @@ namespace TourOfHeroes.Web.Tests.Pages.Heroes.State.Create
     /// <summary>
     /// Unit tests for <see cref="HeroesState.HandleCreate"/>.
     /// </summary>
-    public class HandleCreateTests : HeroesState
+    public class HandleCreateTests : BaseHeroStateTestSetup
     {
         /// <summary>
         /// The <see cref="HeroesState.HandleCreate"/> to test with.
@@ -19,22 +17,11 @@ namespace TourOfHeroes.Web.Tests.Pages.Heroes.State.Create
         private readonly HeroesState.HandleCreate _handleCreate;
 
         /// <summary>
-        /// The <see cref="HeroesState"/> to test with.
-        /// </summary>
-        private HeroesState _heroesState;
-
-        /// <summary>
         /// Initializes a new instance of the <see cref="HandleCreateTests"/> class.
         /// </summary>
         public HandleCreateTests()
         {
-            _heroesState = new HeroesState();
-            _heroesState.Initialize();
-            var mockStore = new Mock<IStore>();
-            mockStore
-                .Setup(store => store.GetState<HeroesState>())
-                .Returns(_heroesState);
-            _handleCreate= new HeroesState.HandleCreate(mockStore.Object);
+            _handleCreate= new HeroesState.HandleCreate(_mockStore.Object);
         }
 
         /// <summary>
