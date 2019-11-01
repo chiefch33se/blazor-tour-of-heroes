@@ -5,6 +5,9 @@ using Xunit;
 
 namespace TourOfHeroes.Web.Tests.Pages.Heroes.Validation
 {
+    /// <summary>
+    /// Unit tests for <see cref="HeroValidationCollection"/>.
+    /// </summary>
     public class HeroValidationCollectionTests
     {
         private HeroValidationCollection _HeroValidationCollection;
@@ -31,6 +34,9 @@ namespace TourOfHeroes.Web.Tests.Pages.Heroes.Validation
             Assert.True(result.IsValid);
         }
 
+        /// <summary>
+        /// Ensure that empty names trigger the validation.
+        /// </summary>
         [Fact]
         public void HeroValidationCollection_RuleFor_NotEmpty()
         {
@@ -48,6 +54,9 @@ namespace TourOfHeroes.Web.Tests.Pages.Heroes.Validation
             Assert.True(validationFailure.ErrorMessage == "Name is required");
         }
 
+        /// <summary>
+        /// Ensure names that are too long trigger validation.
+        /// </summary>
         [Fact]
         public void HeroValidationCollection_RuleFor_MaximumLength()
         {
@@ -65,6 +74,9 @@ namespace TourOfHeroes.Web.Tests.Pages.Heroes.Validation
             Assert.True(validationFailure.ErrorMessage == "Name is too long");
         }
 
+        /// <summary>
+        /// Gets a valid <see cref="Hero"/>.
+        /// </summary>
         private Hero ValidHero => new Hero
         {
             Id = 1,
