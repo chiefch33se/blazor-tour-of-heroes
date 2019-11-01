@@ -8,11 +8,11 @@
         /// <summary>
         /// Gets or sets the ID.
         /// </summary>
-        public int Id { get; set; }
+        public int Id { get; set; } = 0;
 
         /// <summary>
         /// Gets or sets the name.
         /// </summary>
-        public string Name { get; set; }
+        public string Name { get; set; } = string.Empty;
     }
 }
