@@ -1,9 +1,6 @@
-using System.Collections.Generic;
-using System.Threading.Tasks;
 using BlazorState;
 using Microsoft.AspNetCore.Components;
 using TourOfHeroes.Web.Common.Containers.Search.State;
-using TourOfHeroes.Web.Common.Models;
 
 namespace TourOfHeroes.Web.Common.Containers.Search
 {
@@ -23,13 +20,16 @@ namespace TourOfHeroes.Web.Common.Containers.Search
         /// </summary>
         protected SearchState SearchState => GetState<SearchState>();
 
-        public Hero _selectedHero = new Hero();
+        public string SearchText = string.Empty;
 
-        public async Task<IEnumerable<Hero>> SearchHeroes(string searchText)
+        public void SearchHeroes()
         {
-            await Mediator.Send(new SearchState.QueryAction(searchText));
-            
-            return SearchState.Results;
+            Mediator.Send(new SearchState.QueryAction(SearchText));
+        }
+
+        public void ResetControl()
+        {
+            Mediator.Send(new SearchState.ResetAction());
         }
     }
 }

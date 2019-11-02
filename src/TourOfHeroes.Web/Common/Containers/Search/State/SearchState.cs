@@ -12,12 +12,18 @@ namespace TourOfHeroes.Web.Common.Containers.Search.State
         /// <summary>
         /// Gets or sets the <see cref="Hero"/> found during the search.
         /// </summary>
-        public List<Hero> Results { get; private set; }
+        public IReadOnlyCollection<Hero> Results { get; set; }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether the query resulted in an empty set.
+        /// </summary>
+        public bool NoResults { get; private set; }
 
         /// <inheritdoc/>
         public override void Initialize()
         {
             Results = new List<Hero>();
+            NoResults = false;
         }
     }
 }
