@@ -8,6 +8,7 @@ using Microsoft.Extensions.Hosting;
 using TourOfHeroes.Web.Pages.Heroes.State;
 using TourOfHeroes.Web.Common;
 using TourOfHeroes.Web.Pages.Details.State;
+using TourOfHeroes.Web.Common.Containers.Search.State;
 
 namespace TourOfHeroes.Web
 {
@@ -51,6 +52,7 @@ namespace TourOfHeroes.Web
 
             services.AddScoped<HeroesState>();
             services.AddScoped<DetailsState>();
+            services.AddScoped<SearchState>();
         }
 
         /// <summary>

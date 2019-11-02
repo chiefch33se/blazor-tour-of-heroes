@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using BlazorState;
 using TourOfHeroes.Web.Common.Models;
 
@@ -11,12 +12,12 @@ namespace TourOfHeroes.Web.Common.Containers.Search.State
         /// <summary>
         /// Gets or sets the <see cref="Hero"/> found during the search.
         /// </summary>
-        public Hero Hero { get; private set; }
+        public List<Hero> Results { get; private set; }
 
         /// <inheritdoc/>
         public override void Initialize()
         {
-            Hero = new Hero();
+            Results = new List<Hero>();
         }
     }
 }

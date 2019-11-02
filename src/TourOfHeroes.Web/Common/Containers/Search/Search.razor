@@ -1,0 +1,10 @@
+@inherits SearchBase
+
+<BlazoredTypeahead SearchMethod="SearchHeroes" @bind-Value="_selectedHero">
+    <SelectedTemplate>
+        @context.Name
+    </SelectedTemplate>
+    <ResultTemplate>
+        @context
+    </ResultTemplate>
+</BlazoredTypeahead>
