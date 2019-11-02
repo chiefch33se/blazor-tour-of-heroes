@@ -4,7 +4,6 @@ using System.Threading.Tasks;
 using BlazorState;
 using MediatR;
 using TourOfHeroes.Web.Common.Models;
-using TourOfHeroes.Web.Common;
 
 namespace TourOfHeroes.Web.Common.State.Heroes
 {

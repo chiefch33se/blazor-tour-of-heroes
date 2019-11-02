@@ -27,13 +27,22 @@ namespace TourOfHeroes.Web.Common.Containers.Search
         /// </summary>
         protected HeroesState HeroesState => GetState<HeroesState>();
 
-        public string SearchText = string.Empty;
+        /// <summary>
+        /// The search query.
+        /// </summary>
+        private protected string _searchText = string.Empty;
 
+        /// <summary>
+        /// Search for a hero.
+        /// </summary>
         public void SearchHeroes()
         {
-            Mediator.Send(new SearchState.QueryAction(SearchText));
+            Mediator.Send(new SearchState.QueryAction(_searchText));
         }
 
+        /// <summary>
+        /// Reset the control.
+        /// </summary>
         public void ResetControl()
         {
             Mediator.Send(new SearchState.ResetAction());

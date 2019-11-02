@@ -3,7 +3,6 @@ using System.Threading;
 using System.Threading.Tasks;
 using BlazorState;
 using MediatR;
-using TourOfHeroes.Web.Common;
 
 namespace TourOfHeroes.Web.Common.State.Details
 {
