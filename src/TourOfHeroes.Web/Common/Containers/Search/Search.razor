@@ -3,7 +3,7 @@
 <input 
     class="form-control" 
     type="text"
-    @bind-value="searchText"
+    @bind-value="_searchText"
     @bind-value:event="oninput"
     @onkeyup="SearchHeroes"
     @onblur="ResetControl"
@@ -14,10 +14,10 @@
 {
     <div class="card">
         <ul class="list-group list-group-flush">
-            @foreach (var item in SearchState.Results)
+            @foreach (var hero in SearchState.Results)
             {
-                <li class="list-group-item">
-                    @item.Name
+                <li style="cursor:pointer" class="list-group-item" @onclick="@(() => NavigateToHeroDetails(hero.Id))">
+                    @hero.Name
                 </li>
             }
         </ul>

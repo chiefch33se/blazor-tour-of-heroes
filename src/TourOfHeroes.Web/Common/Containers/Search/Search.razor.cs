@@ -48,6 +48,15 @@ namespace TourOfHeroes.Web.Common.Containers.Search
             Mediator.Send(new SearchState.ResetAction());
         }
 
+        /// <summary>
+        /// Send the user to the details page.
+        /// </summary>
+        /// <param name="id">The ID of the <see cref="Hero"/> to view details for.</param>
+        protected void NavigateToHeroDetails(int id)
+        {
+            NavigationManager.NavigateTo($"/details/{id}");
+        }
+
         /// <inheritdoc/>
         protected override void OnInitialized()
         {
