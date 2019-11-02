@@ -5,41 +5,65 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using TourOfHeroes.Web.Pages.Heroes.Feature;
-using TourOfHeroes.Web.Shared;
+using TourOfHeroes.Web.Common.State.Heroes;
+using TourOfHeroes.Web.Common.State.Details;
+using TourOfHeroes.Web.Common.State.Search;
+using TourOfHeroes.Web.Common.State;
 
 namespace TourOfHeroes.Web
 {
+    /// <summary>
+    /// Configures services and the app's request pipeline.
+    /// </summary>
     public class Startup
     {
+        /// <summary>
+        /// Startup method for the application.
+        /// </summary>
+        /// <param name="configuration">The <see cref="IConfiguration"/> to startup with.</param>
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
         }
 
+        /// <summary>
+        /// Gets the applications <see cref="IConfiguration"/>.
+        /// </summary>
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
-        // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
-        public void ConfigureServices(IServiceCollection services)
+        /// <summary>
+        /// Configures the app's services.
+        /// </summary>
+        /// <param name="services">The container to add additional service to.</param>
+        /// <remarks>
+        /// This method gets called by the runtime. Use this method to add services to the container.
+        /// For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
+        /// </remarks>
+        public static void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
             services.AddServerSideBlazor();
 
-            // If you're getting Error: Handler was not found for request of type MediatR.IRequestHandler`2[YourAction,MediatR.Unit]. Register your handlers with the container.
-            // Then you need to add the assemblies where the handlers live. Blazor State will then scan for Handlers in that assembly.
-            // You essentially could add any class in here providing it lives in the same assembly... I'm using the base handler as that makes most sense.
-            services.AddBlazorState((options) => 
-                options.Assemblies = new Assembly[] 
+            services.AddBlazorState((options) =>
+                options.Assemblies = new Assembly[]
                 {
                     typeof(BaseHandler<IAction>).GetTypeInfo().Assembly
                 });
 
             services.AddScoped<HeroesState>();
+            services.AddScoped<DetailsState>();
+            services.AddScoped<SearchState>();
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        /// <summary>
+        /// Configures how the app responds to HTTP requests.
+        /// </summary>
+        /// <param name="app">The middleware components to configure the request pipeline with.</param>
+        /// <param name="env">The environment in which the application is run.</param>
+        /// <remarks>
+        /// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        /// </remarks>
+        public static void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
             {

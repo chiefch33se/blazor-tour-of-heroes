@@ -1,4 +1,5 @@
 using System;
+using System.Globalization;
 using FluentValidation;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Forms;
@@ -66,14 +67,14 @@ namespace TourOfHeroes.Web.Validation
                 propertyPath = propertyPath.Substring(nextTokenEnd + 1);
 
                 object newObj;
-                if (nextToken.EndsWith("]"))
+                if (nextToken.EndsWith("]", true, CultureInfo.InvariantCulture))
                 {
                     // It's an indexer
                     // This code assumes C# conventions (one indexer named Item with one param)
                     nextToken = nextToken.Substring(0, nextToken.Length - 1);
                     var prop = obj.GetType().GetProperty("Item");
                     var indexerType = prop.GetIndexParameters()[0].ParameterType;
-                    var indexerValue = Convert.ChangeType(nextToken, indexerType);
+                    var indexerValue = Convert.ChangeType(nextToken, indexerType, CultureInfo.InvariantCulture);
                     newObj = prop.GetValue(obj, new object[] { indexerValue });
                 }
                 else

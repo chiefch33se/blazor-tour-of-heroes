@@ -1,0 +1,50 @@
+@page "/heroes"
+@using TourOfHeroes.Web.Common.Models.Validation
+@inherits HeroesBase
+
+<div class="container">
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4">My Heroes</h1>
+        </div>
+    </div>
+
+    <div class="card hero-add-form">
+        <div class="card-body">
+            <EditForm class="form-inline" Model="@_hero" OnValidSubmit="@Create">
+                <div class="form-group mx-sm-3 mb-2">     
+                    <FluentValidator TValidator="HeroValidationCollection" />
+                    <InputText id="name" @bind-Value="@_hero.Name" class="form-control" type="text" placeholder="Hero name" />
+                </div>
+                <button type="submit" class="btn btn-primary mb-2">Add</button>
+                <div>
+                    <ValidationSummary />
+                </div>
+            </EditForm>
+        </div>
+    </div>
+
+    <div class="card-columns">
+        @foreach (var hero in HeroesState.Heroes)
+        {
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">@hero.Name</h5>
+                    <p class="card-text">ID: @hero.Id</p>
+                </div>
+                <div class="card-footer text-right">
+                    <button class="btn btn-sm btn-link" @onclick="@(() => Delete(hero.Id))">Delete</button>
+                    <button type="button" class="btn btn-sm btn-dark" @onclick="@(() => Modify(hero.Id))">Edit</button>
+                </div>
+            </div>
+        }
+    </div>
+
+    @if (HeroesState.Heroes.Any() == false)
+    {
+        <div class="alert alert-info" role="alert">
+            <strong>Oh no!</strong> It looks like you don't have any heroes 😕
+        </div>
+    }
+
+</div>
