@@ -8,7 +8,6 @@ using Xunit;
 
 namespace TourOfHeroes.Web.Tests.Common.State.Details.Modify
 {
-
     /// <summary>
     /// Unit tests for <see cref="DetailsState.HandleModify"/>.
     /// </summary>
@@ -75,4 +74,3 @@ namespace TourOfHeroes.Web.Tests.Common.State.Details.Modify
         }
     }
 }
-
