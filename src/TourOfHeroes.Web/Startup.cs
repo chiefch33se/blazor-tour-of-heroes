@@ -5,10 +5,10 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using TourOfHeroes.Web.Pages.Heroes.State;
-using TourOfHeroes.Web.Common;
-using TourOfHeroes.Web.Pages.Details.State;
-using TourOfHeroes.Web.Common.Containers.Search.State;
+using TourOfHeroes.Web.Common.State.Heroes;
+using TourOfHeroes.Web.Common.State.Details;
+using TourOfHeroes.Web.Common.State.Search;
+using TourOfHeroes.Web.Common.State;
 
 namespace TourOfHeroes.Web
 {
@@ -44,8 +44,8 @@ namespace TourOfHeroes.Web
             services.AddRazorPages();
             services.AddServerSideBlazor();
 
-            services.AddBlazorState((options) => 
-                options.Assemblies = new Assembly[] 
+            services.AddBlazorState((options) =>
+                options.Assemblies = new Assembly[]
                 {
                     typeof(BaseHandler<IAction>).GetTypeInfo().Assembly
                 });

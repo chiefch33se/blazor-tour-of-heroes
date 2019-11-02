@@ -1,8 +1,8 @@
 using BlazorState;
 using Moq;
-using TourOfHeroes.Web.Common.Containers.Search.State;
-using TourOfHeroes.Web.Pages.Details.State;
-using TourOfHeroes.Web.Pages.Heroes.State;
+using TourOfHeroes.Web.Common.State.Search;
+using TourOfHeroes.Web.Common.State.Details;
+using TourOfHeroes.Web.Common.State.Heroes;
 
 namespace TourOfHeroes.Web.Tests.Helpers
 {

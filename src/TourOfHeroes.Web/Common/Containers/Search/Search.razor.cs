@@ -1,6 +1,8 @@
+using System.Linq;
 using BlazorState;
 using Microsoft.AspNetCore.Components;
-using TourOfHeroes.Web.Common.Containers.Search.State;
+using TourOfHeroes.Web.Common.State.Search;
+using TourOfHeroes.Web.Common.State.Heroes;
 
 namespace TourOfHeroes.Web.Common.Containers.Search
 {
@@ -20,6 +22,11 @@ namespace TourOfHeroes.Web.Common.Containers.Search
         /// </summary>
         protected SearchState SearchState => GetState<SearchState>();
 
+        /// <summary>
+        /// Gets the heroes state.
+        /// </summary>
+        protected HeroesState HeroesState => GetState<HeroesState>();
+
         public string SearchText = string.Empty;
 
         public void SearchHeroes()
@@ -30,6 +37,15 @@ namespace TourOfHeroes.Web.Common.Containers.Search
         public void ResetControl()
         {
             Mediator.Send(new SearchState.ResetAction());
+        }
+
+        /// <inheritdoc/>
+        protected override void OnInitialized()
+        {
+            if (HeroesState.Heroes.Any() == false)
+            {
+                Mediator.Send(new HeroesState.RetrieveManyAction());
+            }
         }
     }
 }

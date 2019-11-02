@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using System.Threading;
-using TourOfHeroes.Web.Common.Containers.Search.State;
+using TourOfHeroes.Web.Common.State.Search;
 using TourOfHeroes.Web.Common.Models;
 using TourOfHeroes.Web.Tests.Helpers;
 using Xunit;
