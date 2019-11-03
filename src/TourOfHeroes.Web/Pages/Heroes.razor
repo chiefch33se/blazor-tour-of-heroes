@@ -9,10 +9,10 @@
         </div>
     </div>
 
-    <h5>Add a Hero</h5>
     <div class="card hero-add-form">
         <div class="card-body">
             <EditForm class="form-inline" Model="@_hero" OnValidSubmit="@Create">
+                <label class="mb-2">Add a Hero</label>
                 <div class="form-group mx-sm-3 mb-2">     
                     <FluentValidator TValidator="HeroValidationCollection" />
                     <InputText id="name" @bind-Value="@_hero.Name" class="form-control" type="text" placeholder="Hero name" />
@@ -29,6 +29,7 @@
         @foreach (var hero in HeroesState.Heroes)
         {
             <div class="card">
+                <img class="card-img-top hero-card-img" src="@hero.Picture" alt="@hero.Name">
                 <div class="card-body">
                     <h5 class="card-title">@hero.Name</h5>
                     <p class="card-text">ID: @hero.Id</p>
@@ -47,5 +48,4 @@
             <strong>Oh no!</strong> It looks like you don't have any heroes 😕
         </div>
     }
-
 </div>

@@ -14,6 +14,11 @@ namespace TourOfHeroes.Web.Common.Models
         public string Name { get; set; } = string.Empty;
 
         /// <summary>
+        /// Gets the Hero's picture.
+        /// </summary>
+        public string Picture => $"https://api.adorable.io/avatars/286/{Id}";
+
+        /// <summary>
         /// Equality comparer.
         /// </summary>
         /// <param name="other">Other <see cref="Hero"/> to check against.</param>
