@@ -1,0 +1,12 @@
+@using TourOfHeroes.Web.Common.Models
+
+<img class="card-img-top hero-card-img" src="@Hero.Picture" alt="@Hero.Name">
+<div class="card-body">
+    <h5 class="card-title">@Hero.Name</h5>
+    <p class="card-text">ID: @Hero.Id</p>
+</div>
+
+@code {
+    [Parameter]
+    public Hero Hero { get; set; }
+}

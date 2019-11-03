@@ -29,11 +29,7 @@
         @foreach (var hero in HeroesState.Heroes)
         {
             <div class="card">
-                <img class="card-img-top hero-card-img" src="@hero.Picture" alt="@hero.Name">
-                <div class="card-body">
-                    <h5 class="card-title">@hero.Name</h5>
-                    <p class="card-text">ID: @hero.Id</p>
-                </div>
+                <HeroCardBody Hero=@hero />
                 <div class="card-footer text-right">
                     <button class="btn btn-sm btn-link" @onclick="@(() => Delete(hero.Id))">Delete</button>
                     <button type="button" class="btn btn-sm btn-dark" @onclick="@(() => Modify(hero.Id))">Edit</button>
