@@ -17,6 +17,11 @@ namespace TourOfHeroes.Web.Common.Containers.TopHeroes
         public NavigationManager NavigationManager { get; set; }
 
         /// <summary>
+        /// Gets the heroes state.
+        /// </summary>
+        protected HeroesState HeroesState => GetState<HeroesState>();
+
+        /// <summary>
         /// Send the user to the details page.
         /// </summary>
         /// <param name="id">The ID of the <see cref="Hero"/> to view details for.</param>
@@ -24,11 +29,6 @@ namespace TourOfHeroes.Web.Common.Containers.TopHeroes
         {
             NavigationManager.NavigateTo($"/details/{id}");
         }
-
-        /// <summary>
-        /// Gets the heroes state.
-        /// </summary>
-        protected HeroesState HeroesState => GetState<HeroesState>();
 
         /// <inheritdoc/>
         protected override void OnInitialized()
