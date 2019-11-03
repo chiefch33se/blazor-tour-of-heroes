@@ -3,7 +3,7 @@
 <div class="card-columns">
     @foreach (var hero in HeroesState.Heroes.Take(3))
     {
-        <div class="card">
+        <div class="card pointer" @onclick="@(() => NavigateToHeroDetails(hero.Id))">
             <HeroCardBody Hero=@hero />
         </div>
     }
