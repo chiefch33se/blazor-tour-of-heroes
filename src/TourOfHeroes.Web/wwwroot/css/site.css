@@ -91,6 +91,10 @@ app {
     margin-bottom: .75rem;
 }
 
+.pointer {
+    cursor:pointer;
+}
+
 .validation-errors {
     margin-bottom: .5rem;
     padding-left: 1rem;

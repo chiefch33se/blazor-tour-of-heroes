@@ -16,7 +16,7 @@
         <ul class="list-group list-group-flush">
             @foreach (var hero in SearchState.Results)
             {
-                <li style="cursor:pointer" class="list-group-item" @onclick="@(() => NavigateToHeroDetails(hero.Id))">
+                <li class="list-group-item pointer" @onclick="@(() => NavigateToHeroDetails(hero.Id))">
                     @hero.Name
                 </li>
             }
