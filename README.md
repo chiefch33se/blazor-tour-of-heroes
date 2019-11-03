@@ -4,4 +4,4 @@
 
 The Angular Tour of Heroes tutorial, but done using [Blazor](https://dotnet.microsoft.com/apps/aspnet/web-apps/blazor) and [Blazor-State](https://github.com/TimeWarpEngineering/blazor-state) instead.
 
-![Heroes screenshot](/images/heroes.png)
+![Heroes screenshot](/screenshots/heroes.png)
