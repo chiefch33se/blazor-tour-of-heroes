@@ -12,3 +12,7 @@ You'll want the latest version of the [.NET Core SDK](https://dotnet.microsoft.c
 To run the app from the command line: `dotnet run --project src/TourOfHeroes.Web`.
 
 The tests can also be ran from the command line: `dotnet test`.
+
+## Tech stack
+
+* [Blazor-State](https://github.com/TimeWarpEngineering/blazor-state) for the Redux style state
