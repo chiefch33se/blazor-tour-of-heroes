@@ -1,4 +1,4 @@
-# Blazor State Tour of Heroes
+# Blazor Tour of Heroes
 
 [![Build Status](https://travis-ci.org/georgemathieson/blazor-state-tour-of-heroes.svg?branch=master)](https://travis-ci.org/georgemathieson/blazor-state-tour-of-heroes)
 
