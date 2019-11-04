@@ -15,7 +15,7 @@
         <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         <PrivateAssets>all</PrivateAssets>
       </PackageReference>
-      <PackageReference Include="FluentValidation" Version="8.5.0" />
+      <PackageReference Include="FluentValidation" Version="8.5.1" />
   </ItemGroup>
 
 </Project>
