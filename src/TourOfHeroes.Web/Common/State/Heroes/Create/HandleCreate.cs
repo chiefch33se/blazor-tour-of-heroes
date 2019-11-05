@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
@@ -46,7 +47,9 @@ namespace TourOfHeroes.Web.Common.State.Heroes
                     Name = aAction?.Name
                 };
 
-                HeroesState.Heroes.Add(heroToAppend);
+                var heroes = new List<Hero>(HeroesState.Heroes);
+                heroes.Add(heroToAppend);
+                HeroesState.Heroes = heroes;
 
                 return Unit.Task;
             }

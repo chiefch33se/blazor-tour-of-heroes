@@ -12,7 +12,7 @@ namespace TourOfHeroes.Web.Common.State.Heroes
         /// <summary>
         /// Gets or sets a <see cref="List{Hero}"/>.
         /// </summary>
-        public List<Hero> Heroes { get; private set; }
+        public IReadOnlyCollection<Hero> Heroes { get; private set; }
 
         /// <inheritdoc/>
         public override void Initialize()
