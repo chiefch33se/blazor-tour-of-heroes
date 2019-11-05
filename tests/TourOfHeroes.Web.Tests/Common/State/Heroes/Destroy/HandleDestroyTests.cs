@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Threading;
 using TourOfHeroes.Web.Common.Models;
 using TourOfHeroes.Web.Common.State.Heroes;
@@ -35,10 +36,16 @@ namespace TourOfHeroes.Web.Tests.Common.State.Heroes.Destroy
         {
             // Arrange.
             var action = new HeroesState.DestroyAction(payload);
-            _heroesState.Heroes.Add(new Hero
+            var hero = new Hero
             {
                 Id = payload
-            });
+            };
+            var heroes = new List<Hero> { hero };
+            var keyValuePairs = new Dictionary<string, object>
+            {
+                { "Heroes", heroes }
+            };
+            _heroesState.Hydrate(keyValuePairs);
 
             // Act.
             _handleDestroy.Handle(action, new CancellationToken());

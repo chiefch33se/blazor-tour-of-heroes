@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using TourOfHeroes.Web.Common.Models;
@@ -56,13 +57,21 @@ namespace TourOfHeroes.Web.Tests.Common.State.Heroes.Create
             // Arrange.
             var payload = "Tornado";
             var action = new HeroesState.CreateAction(payload);
+            var heroes = new List<Hero>();
             for (int i = 0; i <= numberOfExistingHeroes; i++)
             {
-                _heroesState.Heroes.Add(new Hero
+                heroes.Add(new Hero
                 {
                     Id = i
                 });
             }
+
+            var keyValuePairs = new Dictionary<string, object>
+            {
+                { "Heroes", heroes }
+            };
+            
+            _heroesState.Hydrate(keyValuePairs);
 
             // Should be one higher than the number of Heroes already in the state.
             var expected = numberOfExistingHeroes + 1;
