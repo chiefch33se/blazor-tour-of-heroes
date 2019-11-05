@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Threading;
 using TourOfHeroes.Web.Common.Models;
 using TourOfHeroes.Web.Common.State.Details;
@@ -39,7 +40,14 @@ namespace TourOfHeroes.Web.Tests.Common.State.Details.RetrieveOne
             {
                 Id = payload
             };
-            _heroesState.Heroes.Add(expected);
+
+            var heroes = new List<Hero> { expected };
+            var keyValuePairs = new Dictionary<string, object>
+            {
+                { "Heroes", heroes }
+            };
+            
+            _heroesState.Hydrate(keyValuePairs);
 
             // Act.
             _handleRetrieveOne.Handle(action, new CancellationToken());

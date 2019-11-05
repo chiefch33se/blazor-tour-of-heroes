@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Threading;
 using TourOfHeroes.Web.Common.Models;
 using TourOfHeroes.Web.Common.State.Search;
@@ -40,7 +41,12 @@ namespace TourOfHeroes.Web.Tests.Common.State.Search.Query
                 Id = 1,
                 Name = "Tornado"
             };
-            _heroesState.Heroes.Add(hero);
+            var heroes = new List<Hero> { hero };
+            var keyValuePairs = new Dictionary<string, object>
+            {
+                { "Heroes", heroes }
+            };
+            _heroesState.Hydrate(keyValuePairs);
             var action = new SearchState.QueryAction(query);
 
             // Act.
@@ -63,7 +69,12 @@ namespace TourOfHeroes.Web.Tests.Common.State.Search.Query
                 Id = 1,
                 Name = "Tornado"
             };
-            _heroesState.Heroes.Add(hero);
+            var heroes = new List<Hero> { hero };
+            var keyValuePairs = new Dictionary<string, object>
+            {
+                { "Heroes", heroes }
+            };
+            _heroesState.Hydrate(keyValuePairs);
             var action = new SearchState.QueryAction("some non-matching query");
 
             // Act.

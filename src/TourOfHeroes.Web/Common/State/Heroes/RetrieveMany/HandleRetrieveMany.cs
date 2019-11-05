@@ -47,7 +47,7 @@ namespace TourOfHeroes.Web.Common.State.Heroes
                     new Hero{ Id = 20, Name = "Tornado" },
                 };
 
-                HeroesState.Heroes.AddRange(heroes);
+                HeroesState.Heroes = heroes;
 
                 return Unit.Task;
             }

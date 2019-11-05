@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
@@ -37,11 +38,18 @@ namespace TourOfHeroes.Web.Tests.Common.State.Details.Modify
         public void HandleModify_ValidAction_UpdatesState(int id, string name)
         {
             // Arrange.
-            _heroesState.Heroes.Add(new Hero
+            var hero = new Hero
             {
                 Id = id,
                 Name = "Tornado"
-            });
+            };
+            var heroes = new List<Hero> { hero };
+            var keyValuePairs = new Dictionary<string, object>
+            {
+                { "Heroes", heroes }
+            };
+            _heroesState.Hydrate(keyValuePairs);
+
             var payload = new Hero
             {
                 Id = id,

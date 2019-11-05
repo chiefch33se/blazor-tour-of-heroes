@@ -1,8 +1,11 @@
+using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using BlazorState;
 using MediatR;
+using TourOfHeroes.Web.Common.Models;
 
 namespace TourOfHeroes.Web.Common.State.Heroes
 {
@@ -34,8 +37,9 @@ namespace TourOfHeroes.Web.Common.State.Heroes
                 // TODO: Make service call.
 
                 var itemToDelete = HeroesState.Heroes.FirstOrDefault(hero => hero.Id == aAction.Id);
-
-                var result = HeroesState.Heroes.Remove(itemToDelete);
+                var heroes = new List<Hero>(HeroesState.Heroes);
+                heroes.Remove(itemToDelete);
+                HeroesState.Heroes = heroes;
 
                 return Unit.Task;
             }
