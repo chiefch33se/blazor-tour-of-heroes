@@ -1,0 +1,14 @@
+# directories
+**/bin/
+**/obj/
+**/out/
+
+# files
+Dockerfile*
+*.Dockerfile
+docker-compose.yml
+**/*.trx
+**/*.md
+.gitignore
+.vs
+.vscode

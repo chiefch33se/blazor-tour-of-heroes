@@ -6,7 +6,12 @@ The [Angular Tour of Heroes](https://angular.io/tutorial) tutorial, but done usi
 
 ![Heroes screenshot](/screenshots/heroes.png)
 
-## Running this project
+## Running the App
+
+### Docker
+Deploy by running `docker-compose up`.
+
+### Local Machine
 You'll want the latest version of the [.NET Core SDK](https://dotnet.microsoft.com/download/dotnet-core).
 
 To run the app from the command line: `dotnet run --project src/TourOfHeroes.Web`.
