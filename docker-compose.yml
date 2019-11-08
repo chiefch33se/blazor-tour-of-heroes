@@ -1,0 +1,8 @@
+version: '3'
+services:
+  webapp:
+    build:
+      context: .
+      dockerfile: webapp.Dockerfile
+    ports:
+      - "80:80"
