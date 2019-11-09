@@ -1,33 +1,16 @@
 @inherits SearchBase
 
-<input 
-    class="form-control" 
-    type="text"
-    @bind-value="_searchText"
-    @bind-value:event="oninput"
-    @onkeyup="SearchHeroes"
-    @onblur="ResetControl"
-    autocomplete="off" 
-    placeholder="Search"/>
-
-@if (SearchState.Results.Any())
-{
-    <div class="card">
-        <ul class="list-group list-group-flush">
-            @foreach (var hero in SearchState.Results)
-            {
-                <li class="list-group-item pointer" @onclick="@(() => NavigateToHeroDetails(hero.Id))">
-                    @hero.Name
-                </li>
-            }
-        </ul>
-    </div>
-}
-@if (SearchState.NoResults)
-{
-    <div class="card">
-        <li class="list-group-item">
-            No Results!
-        </li>
-    </div>
-}
+<BlazoredTypeahead SearchMethod="SearchHeroes"
+                   @bind-Value="SelectedHero"
+                   ShowDropDownOnFocus="true"
+                   placeholder="Search by first name...">
+    <SelectedTemplate Context="hero">
+        @hero.Name
+    </SelectedTemplate>
+    <ResultTemplate Context="hero">
+        @hero.Name
+    </ResultTemplate>
+    <NotFoundTemplate>
+        Not found
+    </NotFoundTemplate>
+</BlazoredTypeahead>
