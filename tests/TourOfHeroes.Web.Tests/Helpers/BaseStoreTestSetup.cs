@@ -1,6 +1,5 @@
 using BlazorState;
 using Moq;
-using TourOfHeroes.Web.Common.State.Search;
 using TourOfHeroes.Web.Common.State.Details;
 using TourOfHeroes.Web.Common.State.Heroes;
 
@@ -20,11 +19,6 @@ namespace TourOfHeroes.Web.Tests.Helpers
         /// The <see cref="HeroesState"/> to test with.
         /// </summary>
         private protected readonly DetailsState _detailsState;
-
-        /// <summary>
-        /// The <see cref="SearchState"/> to test with.
-        /// </summary>
-        private protected readonly SearchState _searchState;
 
         /// <summary>
         /// The <see cref="Mock{IStore}"/> to test with.
@@ -51,13 +45,6 @@ namespace TourOfHeroes.Web.Tests.Helpers
             _mockStore
                 .Setup(store => store.GetState<DetailsState>())
                 .Returns(_detailsState);
-
-            // Setup Search State.
-            _searchState = new SearchState();
-            _searchState.Initialize();
-            _mockStore
-                .Setup(store => store.GetState<SearchState>())
-                .Returns(_searchState);
         }
     }
 }

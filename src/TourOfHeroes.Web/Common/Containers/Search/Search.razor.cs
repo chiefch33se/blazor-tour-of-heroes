@@ -1,8 +1,10 @@
 using System.Linq;
 using BlazorState;
 using Microsoft.AspNetCore.Components;
-using TourOfHeroes.Web.Common.State.Search;
 using TourOfHeroes.Web.Common.State.Heroes;
+using System.Threading.Tasks;
+using System.Collections.Generic;
+using TourOfHeroes.Web.Common.Models;
 
 namespace TourOfHeroes.Web.Common.Containers.Search
 {
@@ -18,9 +20,20 @@ namespace TourOfHeroes.Web.Common.Containers.Search
         public NavigationManager NavigationManager { get; set; }
 
         /// <summary>
-        /// Gets the heroes state.
+        /// Gets or sets the selected hero from the search.
         /// </summary>
-        protected SearchState SearchState => GetState<SearchState>();
+        public Hero SelectedHero
+        {
+            get 
+            { 
+                return null;
+            }
+            set
+            {
+                // Bit hacky but it works.
+                NavigationManager.NavigateTo($"/details/{value.Id}");
+            }
+        }
 
         /// <summary>
         /// Gets the heroes state.
@@ -35,26 +48,11 @@ namespace TourOfHeroes.Web.Common.Containers.Search
         /// <summary>
         /// Search for a hero.
         /// </summary>
-        public void SearchHeroes()
+        protected async Task<IEnumerable<Hero>> SearchHeroes(string query)
         {
-            Mediator.Send(new SearchState.QueryAction(_searchText));
-        }
-
-        /// <summary>
-        /// Reset the control.
-        /// </summary>
-        public void ResetControl()
-        {
-            Mediator.Send(new SearchState.ResetAction());
-        }
-
-        /// <summary>
-        /// Send the user to the details page.
-        /// </summary>
-        /// <param name="id">The ID of the <see cref="Hero"/> to view details for.</param>
-        protected void NavigateToHeroDetails(int id)
-        {
-            NavigationManager.NavigateTo($"/details/{id}");
+            return await Task.FromResult(HeroesState.Heroes
+                .Where(hero => hero.Name.ToLowerInvariant()
+                    .Contains(query.ToLowerInvariant())));
         }
 
         /// <inheritdoc/>
