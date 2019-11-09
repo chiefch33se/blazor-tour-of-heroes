@@ -1,4 +1,3 @@
-using System;
 using System.Linq;
 using BlazorState;
 using Microsoft.AspNetCore.Components;
@@ -51,9 +50,9 @@ namespace TourOfHeroes.Web.Common.Containers.Search
         /// </summary>
         protected async Task<IEnumerable<Hero>> SearchHeroes(string query)
         {
-            return HeroesState.Heroes
+            return await Task.FromResult(HeroesState.Heroes
                 .Where(hero => hero.Name.ToLowerInvariant()
-                    .Contains(query.ToLowerInvariant()));
+                    .Contains(query.ToLowerInvariant())));
         }
 
         /// <inheritdoc/>

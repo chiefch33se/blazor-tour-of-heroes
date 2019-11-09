@@ -7,7 +7,6 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using TourOfHeroes.Web.Common.State.Heroes;
 using TourOfHeroes.Web.Common.State.Details;
-using TourOfHeroes.Web.Common.State.Search;
 using TourOfHeroes.Web.Common.State;
 
 namespace TourOfHeroes.Web
@@ -52,7 +51,6 @@ namespace TourOfHeroes.Web
 
             services.AddScoped<HeroesState>();
             services.AddScoped<DetailsState>();
-            services.AddScoped<SearchState>();
         }
 
         /// <summary>
