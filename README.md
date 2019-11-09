@@ -18,6 +18,7 @@ To run the app from the command line: `dotnet run --project src/TourOfHeroes.Web
 
 The tests can also be ran from the command line: `dotnet test`.
 
-## Tech stack
+## Libraries
 
 * [Blazor-State](https://github.com/TimeWarpEngineering/blazor-state) for the Redux style state
+* [Blazored Typeahead](https://github.com/TimeWarpEngineering/blazor-state) for Typeahead control on the search
