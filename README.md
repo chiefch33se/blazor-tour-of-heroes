@@ -21,4 +21,4 @@ The tests can also be ran from the command line: `dotnet test`.
 ## Libraries
 
 * [Blazor-State](https://github.com/TimeWarpEngineering/blazor-state) for the Redux style state
-* [Blazored Typeahead](https://github.com/TimeWarpEngineering/blazor-state) for Typeahead control on the search
+* [Blazored Typeahead](https://github.com/Blazored/Typeahead) for Typeahead control on the search
