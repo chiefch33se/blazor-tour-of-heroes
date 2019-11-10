@@ -51,7 +51,7 @@ namespace TourOfHeroes.Web
                         .GetSection("Azure")
                         .GetSection("SignalR")
                         .GetSection("ConnectionString")
-                        .Value;
+                        .Value
                 );
 #endif
 
