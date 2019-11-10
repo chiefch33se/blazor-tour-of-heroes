@@ -22,13 +22,13 @@ namespace TourOfHeroes.Web
         /// <param name="configuration">The <see cref="IConfiguration"/> to startup with.</param>
         public Startup(IConfiguration configuration)
         {
-            Configuration = configuration;
+            _configuration = configuration;
         }
 
         /// <summary>
-        /// Gets the applications <see cref="IConfiguration"/>.
+        /// The applications <see cref="IConfiguration"/>.
         /// </summary>
-        public IConfiguration Configuration { get; }
+        private static IConfiguration _configuration;
 
         /// <summary>
         /// Configures the app's services.
@@ -42,6 +42,20 @@ namespace TourOfHeroes.Web
         {
             services.AddRazorPages();
             services.AddServerSideBlazor();
+            
+#if (DEBUG == false)
+            var azureSignalRConnectionString =  _configuration
+                .GetSection("Azure")
+                .GetSection("SignalR")
+                .GetSection("ConnectionString")
+                .Value;
+
+            services
+                .AddSignalR()
+                .AddAzureSignalR(
+                    azureSignalRConnectionString
+                );
+#endif
 
             services.AddBlazorState((options) =>
                 options.Assemblies = new Assembly[]
