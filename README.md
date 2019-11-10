@@ -1,6 +1,7 @@
 # Blazor Tour of Heroes
 
 [![Build Status](https://travis-ci.org/georgemathieson/blazor-tour-of-heroes.svg?branch=master)](https://travis-ci.org/georgemathieson/blazor-tour-of-heroes)
+[![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=georgemathieson/blazor-tour-of-heroes)](https://dependabot.com)
 
 The [Angular Tour of Heroes](https://angular.io/tutorial) tutorial, but done using [Blazor](https://dotnet.microsoft.com/apps/aspnet/web-apps/blazor) instead. Largely built as an opportunity to learn server-side Blazor with a Redux style state management system.
 
