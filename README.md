@@ -22,3 +22,6 @@ The tests can also be ran from the command line: `dotnet test`.
 
 * [Blazor-State](https://github.com/TimeWarpEngineering/blazor-state) for the Redux style state
 * [Blazored Typeahead](https://github.com/Blazored/Typeahead) for Typeahead control on the search
+
+## Demo
+The [demo site](https://blazor-tour-of-heroes.azurewebsites.net/) is hosted on a free Azure site, so be gentle 😄.
