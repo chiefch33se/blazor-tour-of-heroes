@@ -18,7 +18,7 @@ You can run using the command line: `dotnet run --project src/TourOfHeroes.Web"`
 The tests can also be run this way: `dotnet test`.
 
 ### Publishing to Azure
-Deploy by running `docker-compose up`.
+Build by running `docker-compose build`.
 
 ⚠️ For server-side Blazor, you'll need to use a SignalR Service in conjunction with an App Service for things to work.
 
