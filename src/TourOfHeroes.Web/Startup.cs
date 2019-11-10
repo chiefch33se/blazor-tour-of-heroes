@@ -42,18 +42,16 @@ namespace TourOfHeroes.Web
         {
             services.AddRazorPages();
             services.AddServerSideBlazor();
-            
-#if (DEBUG == false)
-            var azureSignalRConnectionString =  _configuration
-                .GetSection("Azure")
-                .GetSection("SignalR")
-                .GetSection("ConnectionString")
-                .Value;
 
+#if (DEBUG == false)
             services
                 .AddSignalR()
                 .AddAzureSignalR(
-                    azureSignalRConnectionString
+                    _configuration
+                        .GetSection("Azure")
+                        .GetSection("SignalR")
+                        .GetSection("ConnectionString")
+                        .Value;
                 );
 #endif
 
