@@ -6,3 +6,5 @@ services:
       dockerfile: webapp.Dockerfile
     ports:
       - "80:80"
+      - "443:443"
+    image: blazor-tour-of-heroes
