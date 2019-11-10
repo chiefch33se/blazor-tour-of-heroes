@@ -22,7 +22,7 @@ Build by running `docker-compose build`.
 
 ⚠️ For server-side Blazor, you'll need to use a SignalR Service in conjunction with an App Service for things to work.
 
-You can then push the Docker image into Azure (or wherever) and consume it using an App Service. You will need to add the application setting `Azure__SignalR__ConnectionString` in your App Service's Configuration and set its value to the SignalR Service connection string. 
+You can then push the Docker image into Azure (or wherever) and consume it using an App Service. You will need to add the application setting `Azure__SignalR__ConnectionString` in your App Service's Configuration and set the value to the SignalR Service connection string. 
 
 ## Credits
 
