@@ -14,7 +14,7 @@ You'll want the latest version of the [.NET Core SDK](https://dotnet.microsoft.c
 
 The simplest way is to use VSCode or Visual Studio to run the project.
 
-You can run using the command line: `dotnet run --project src/TourOfHeroes.Web"`.
+You can run using the command line: `dotnet run --project src/TourOfHeroes.Web`.
 
 The tests can also be run this way: `dotnet test`.
 
