@@ -8,15 +8,21 @@ The [Angular Tour of Heroes](https://angular.io/tutorial) tutorial, but done usi
 
 ## Running the App
 
-### Docker
-Deploy by running `docker-compose up`.
-
 ### Local Machine
 You'll want the latest version of the [.NET Core SDK](https://dotnet.microsoft.com/download/dotnet-core).
 
-To run the app from the command line: `dotnet run --project src/TourOfHeroes.Web`.
+The simplest way is to use VSCode or Visual Studio to run the project.
 
-The tests can also be ran from the command line: `dotnet test`.
+You can run using the command line: `dotnet run --project src/TourOfHeroes.Web"`.
+
+The tests can also be run this way: `dotnet test`.
+
+### Publishing to Azure
+Deploy by running `docker-compose up`.
+
+⚠️ For server-side Blazor, you'll need to use a SignalR Service in conjunction with an App Service for things to work.
+
+You can then push the image into Azure and consume it using an App Service. You will need to add the application setting `Azure__SignalR__ConnectionString` in your App Service's Configuration and set its value to the SignalR Service connection string. 
 
 ## Libraries
 
