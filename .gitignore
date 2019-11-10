@@ -18,6 +18,11 @@ Thumbs.db
 *.userosscache
 *.sln.docstates
 
+# Ignore appsettings configuration files
+**/appsettings.[Dd]evelopment.json
+**/appsettings.[Ss]taging.json
+**/appsettings.[Pp]roduction.json
+
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
 
