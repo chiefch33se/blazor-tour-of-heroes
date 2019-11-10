@@ -26,6 +26,7 @@ You can then push the Docker image into Azure (or wherever) and consume it using
 
 ## Libraries
 
+* [Adorable Avatars!](avatars.adorable.io) for the.. adorable avatars
 * [Blazor-State](https://github.com/TimeWarpEngineering/blazor-state) for the Redux style state
 * [Blazored Typeahead](https://github.com/Blazored/Typeahead) for Typeahead control on the search
 
