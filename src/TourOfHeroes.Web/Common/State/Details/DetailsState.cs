@@ -13,6 +13,16 @@ namespace TourOfHeroes.Web.Common.State.Details
         /// </summary>
         public Hero Hero { get; private set; }
 
+        /// <summary>
+        /// First test value.
+        /// </summary>
+        public bool Message1 { get; set; }
+
+        /// <summary>
+        /// Second test value.
+        /// </summary>
+        public bool Message2 { get; set; }
+
         /// <inheritdoc/>
         public override void Initialize()
         {

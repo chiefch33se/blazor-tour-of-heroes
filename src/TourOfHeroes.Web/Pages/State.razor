@@ -1,0 +1,11 @@
+@page "/state"
+@using TourOfHeroes.Web.Common.Models.Validation
+@inherits StateBase
+
+    <div class="container">
+        @DetailsState.Message1
+        @DetailsState.Message2
+
+
+        <button @onclick="HasClicked">click me</button>
+    </div>

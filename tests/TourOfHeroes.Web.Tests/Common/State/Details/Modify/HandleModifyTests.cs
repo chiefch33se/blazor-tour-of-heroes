@@ -55,7 +55,7 @@ namespace TourOfHeroes.Web.Tests.Common.State.Details.Modify
                 Id = id,
                 Name = name
             };
-            var action = new DetailsState.ModifyAction(payload);
+            var action = new DetailsState.Message2Action(payload);
 
             // Act.
             _handleModify.Handle(action, new CancellationToken());
@@ -72,7 +72,7 @@ namespace TourOfHeroes.Web.Tests.Common.State.Details.Modify
         public async Task HandleModify_NotFound_IsHandled()
         {
             // Arrange.
-            var action = new DetailsState.ModifyAction(new Hero());
+            var action = new DetailsState.Message2Action(new Hero());
 
             // Act.
             var exception = await Record.ExceptionAsync(() => _handleModify.Handle(action, new CancellationToken()));

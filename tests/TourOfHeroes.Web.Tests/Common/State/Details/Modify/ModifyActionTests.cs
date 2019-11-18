@@ -26,7 +26,7 @@ namespace TourOfHeroes.Web.Tests.Common.State.Details.Modify
                 Id = expectedId,
                 Name = expectedName
             };
-            var action = new DetailsState.ModifyAction(payload);
+            var action = new DetailsState.Message2Action(payload);
 
             // It should be instanciated with the given payload.
             Assert.Equal(payload, action.Hero);
@@ -39,7 +39,7 @@ namespace TourOfHeroes.Web.Tests.Common.State.Details.Modify
         public void CreateAction_NullPayload_Throws()
         {
             // Given an invalid payload.
-            Assert.Throws<ArgumentNullException>(() => new DetailsState.ModifyAction(null));
+            Assert.Throws<ArgumentNullException>(() => new DetailsState.Message2Action(null));
         }
     }
 }
